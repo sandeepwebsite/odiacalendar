@@ -48,11 +48,12 @@ body {
     gap: 1rem;
 }
 .heading{
-    height: 10rem;
+    height: 12rem;
     width: 100%;
 }
 .heading img{
     width: 100%;
+    height: 15rem
 }
 .card{
     display: flex;
@@ -81,7 +82,7 @@ body {
 .card-1{
     flex: 1;
     background-color: tomato;
-    height: 10rem;
+    height: 12rem;
     text-align: center;
     border-bottom-right-radius: 12px;
     border-bottom-left-radius: 12px;
@@ -89,7 +90,7 @@ body {
 .card-2{
     flex: 1;
     background-color: #F46B63;
-    height: 10rem;
+    height: 12rem;
     text-align: center;
     border-bottom-right-radius: 12px;
     border-bottom-left-radius: 12px;
@@ -104,14 +105,14 @@ body {
 .contact .row-1{
     flex: 2;
     background-color: #F2D388;
-    height: 10rem;
+    height: 12rem;
     box-shadow: 0 0 10px black;
     border-radius: 12px;
 }
 .contact .row-2{
     flex: 1;
     background-color: #8BA987;
-    height: 10rem;
+    height: 12rem;
     display: flex;
     flex-direction: column;
     align-items: center;
