@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Oriya:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, #536976, #292e49);
+}
+#calendar_dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    margin: 20px 0;
+}
+.date {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    position: relative;
+}
+#calendar{
+    width: 100%;
+    max-width: 490px;
+    margin: auto;
+    display:flex;
+    flex-direction: column;
+    border-radius: 16px;
+    padding: 20px;
+    gap: 5px;
+    font-family: "Noto Serif Oriya", serif;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#calendar .toprow{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+#calendar .toprow select{
+    padding: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    font-family: "Noto Serif Oriya", serif;
+}
+button {
+/*    margin: 5px;*/
+    padding: 5px 10px;
+    font-size: 16px;
+    background-color: #007BFF; /* Blue background */
+    color: white; /* White text */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.date.sunday {
+    background-color: #ff0066; /* Light red for Sundays */
+}
+
+.event-date {
+    background-color: purple; /* Purple background for event dates */
+    color: white; /* White text on event dates */
+}
+
+#calendar_days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.day-name {
+    font-weight: bold;
+    color: red;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px;
+    background-color: #f0f0f0; /* Light gray background */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.today {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    font-weight: bold; /* Bold text for emphasis */
+}
+.event{
+    padding: 10px;
+}
+#eventList{
+    align-items: center;
+}
+#eventList li{
+    display: flex;
+    align-items: center;
+    margin: 5px;
+/*    border-left: solid 4px #000000;*/
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#eventList li span{
+    font-size: 1.2rem;
+    border-radius: 5px;
+    color: black;
+    text-align: center;
+    margin: 5px;
+}
+#eventList li span:nth-child(1) {
+  background-color: #0080ff;
+  padding: 5px;
+  color: white;
+}
+/*#eventList li:nth-child(1) {
+  background-color: #0080ff;
+}
+#eventList li:nth-child(2) {
+  background-color: #ffbf00;
+}
+#eventList li:nth-child(3) {
+  background-color: #ff0066;
+}
+#eventList li:nth-child(4) {
+  background-color: #000033;
+}*/
+
+#translate_btn{
+    background-color: transparent;
+}
+header{
+    padding: 10px;
+}
+header h1{
+    text-shadow: 2px 2px  2px black;
+    color: orange;
+}
+header, header div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header img{
+    width: 32px;
+    height: 32px;
+    filter:drop-shadow(5px 5px 5px)
+}
+header #fullcalendardate{
+    position: relative;
+    left: 25px;
+    top: 5px;
+    z-index: 1;
+}
+
+
+/*full year calendar*/
+
+
+
+@media screen and (max-width: 450px){
+    #calendar{
+        margin: auto;
+        width: 95%;
+        padding: 10px;
+    }
+}

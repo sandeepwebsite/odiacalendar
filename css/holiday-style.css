@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    background-color: #4C5BB3;
+    color: #4A148C;
+}
+h1, h2, h3, h4, .tabs, .day-name, .month-name{
+    font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal
+}
+header{
+    background-color: #26A69A;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+/*    height: 60px;*/
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+}
+h4 {
+  text-shadow: 2px 2px 2px #ffffff;
+}
+.calendar-container {
+    display: flex;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    padding-top: 5px;
+    padding-right: 5px;
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+}
+.tabs {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 20px;
+}
+.tab {
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    background-color: #26A69A;
+}
+.tab.active {
+    background-color: #F8F9FA;
+    color: #000000;
+    border: none;
+}
+.tabs button{
+    border: solid 1px;
+}
+.calendar-wrapper {
+    width: 80%;
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 16px;
+    border: 1px solid #ccc;
+}
+.calendar-controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+select{
+    padding: 5px;
+    font-size: 15px;
+    font-weight: bold;
+/*    border: solid 1px;*/
+    border-radius: 5px;
+    outline: none;
+}
+.calendar-controls button {
+/*    margin: 5px;*/
+    padding: 5px 10px;
+    font-size: 16px;
+    background-color: #26A69A;
+    border: none;
+    color: #FFFFFF;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.calendar-controls button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+.month-calendar {
+    width: 100%;
+    border-radius: 16px;
+    padding: 5px;
+    gap: 3px;
+/*    border: 1px solid #ccc;*/
+}
+.month-name {
+    text-align: center;
+    font-weight: bold;
+}
+.calendar-days,
+.calendar-dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    margin: 20px 0;
+}
+.day-name{
+    padding: 2px;
+    background-color: #E3F2FD;
+    color: red;
+    border: 1px solid black;
+    border-radius: 4px;
+    font-weight: bold;
+    text-align: center;
+}
+.date {
+    text-align: center;
+    font-size: 1rem;
+    padding: 5px;
+/*    background-color: #E3F2FD;*/
+/*    color: #333333;*/
+    color: black;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+.date.active {
+    background-color: #42A5F5;
+    color: #FFFFFF;
+}
+.date.today {
+    background-color: #AB47BC;
+    color: #FFFFFF;
+}
+.sunday {
+    background-color: #ff808c;
+    font-weight: 600;
+    color: white;
+}
+.highlight-red {
+    background-color: lightskyblue;
+    color: white; /* Optional: makes the text more readable */
+}
+.events-list {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: white;
+}
+.event-item {
+    margin: 5px 0;
+    color: white;
+    padding: 2px;
+    text-align: left;
+    border-radius: 5px;
+}
+.event-item:nth-child(odd) { background-color: tomato; }
+.event-item:nth-child(even) { background-color: mediumseagreen; }
+.event-item:nth-child(3n) { background-color: darkcyan; }
+.event-item:nth-child(4n) { background-color: mediumorchid; }
+
+@media screen and (max-width: 720px){
+    .calendar-container {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-right: 20px;
+        top: 20px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+    }
+}
+
+@media screen and (max-width: 600px){
+    .calendar-container {
+        width: 95%;
+    }
+
+    .tabs {
+        width: 3%;
+        position: fixed;
+        transform: translateY(25%);
+
+    }
+    .tab {
+        writing-mode: vertical-lr;
+        text-orientation: mixed;
+        line-height: 0px;
+        font-size: 1rem;
+    }
+    .calendar-wrapper {
+        width: 95%;
+        margin-left: 1.8rem;
+        padding: 5px;
+    }
+    .calendar-days,
+    .calendar-dates {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 3px;
+        margin: 15px 0;
+    }
+    .events-list{
+        text-align: center;
+    }
+}
