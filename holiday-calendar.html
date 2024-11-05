@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monthly Calendar with Events</title>
+    <link rel="stylesheet" href="css/holiday-style.css">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h4>Holiday</h4>
+            <h4>Calendar</h4>
+        </div>
+
+        <div class="select-holiday">      
+            <label for="tab_selector"></label>
+            <select id="tab_selector">
+                <option value="bank">Bank</option>
+                <option value="school">School</option>
+                <option value="state">State</option>
+            </select>
+        </div>  
+    </header>
+    <div class="calendar-container">
+        <!-- Sidebar with Tabs -->
+        <div class="tabs">
+            <button id="tab_bank" class="tab">Bank</button>
+            <button id="tab_school" class="tab">School</button>
+            <button id="tab_state" class="tab">State</button>
+        </div>
+
+        <!-- Calendar with Controls -->
+        <div class="calendar-wrapper">
+            <div class="calendar-controls">
+                <button id="prevMonth">&lt;</button>
+                <select id="select_month"></select>
+                <select id="select_year"></select>
+                <button id="nextMonth">&gt;</button>
+                <!-- <button id="currentMonth">||</button> -->
+            </div>
+            
+            <!-- Single Month Calendar Display -->
+            <div class="month-calendar" id="month-calendar"></div>
+
+            <hr>
+            <!-- Events List Display -->
+            <div id="events-list" class="events-list"></div>
+        </div>
+    </div>
+
+
+    <br><br><br>
+    <div class="mob-menu">
+        <li class="active">
+            <img src="image/calendar2.png">
+            <a href="odia-calendar.html">Odia</a>
+        </li>
+        <li class="dual-border">
+            <img src="image/home.png">
+            <a href="index.html">Home</a></li>
+        <li>
+            <img src="image/calendar2.png">
+            <a href="holiday-calendar.html">Holiday</a>
+        </li>
+    </div>
+
+    <script src="js/holiday-script.js"></script>
+</body>
+</html>

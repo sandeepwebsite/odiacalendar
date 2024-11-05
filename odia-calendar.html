@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/odia-calendar.css">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Calendar with Events</title>
+</head>
+<body>
+    <header>
+        <h1>Calendar</h1>
+        <div id="fullcalendarIcon">
+            <p id="fullcalendardate"></p>
+            <img src="image/calendar.png" class="fullcalendarimg">
+        </div>
+        <div>
+            <span><img src="image/translate.png"> </span>
+            <button id="translate_btn">English</button>
+        </div>
+    </header>
+    <div id="calendar">
+        <div class="toprow">
+            <div>
+                <select id="select_month"></select>
+                <select id="select_year"></select>
+            </div>
+            <div>
+                <button id="prev_month"><</button>
+                <button id="curr_month">||</button>
+                <button id="next_month">></button>
+            </div>
+            <div>
+        </div>
+    </div>
+        <hr>
+            <div id="calendar_days"></div>
+        <div id="calendar_dates"></div>
+    </div>
+    <div class="event">
+        <h3>Events</h3>
+        <ul id="eventList"></ul>
+    </div>
+
+    <div id="fullcalendar"></div>
+    <br><br><br>
+    <div class="mob-menu">
+        <li class="active">
+            <img src="image/calendar2.png">
+            <a href="odia-calendar.html">Odia</a>
+        </li>
+        <li class="dual-border">
+            <img src="image/home.png">
+            <a href="index.html">Home</a></li>
+        <li>
+            <img src="image/calendar2.png">
+            <a href="holiday-calendar.html">Holiday</a>
+        </li>
+    </div>
+
+    <script src="js/odia-calendar.js"></script>
+</body>
+</html>

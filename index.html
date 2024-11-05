@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Odisha Calendar</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<div class="container">
+	<div class="header">
+        <img src="image/jagannath.png">
+        <h2>Odia Calendar</h2>
+    </div>
+    <div class="main">
+        <div class="heading">
+            <img src="image/calendar-banner.jpg">
+        </div>
+        <div class="card">
+            <div class="card-1">
+            	<p id="odiaDate"></p>
+            	<h1>ଅ</h1>
+            	<h4>Odia Calendar</h4>
+            	<a href="odia-calendar.html">Visit Now <span>>></span></a>
+            </div>
+            <div class="card-2">
+            	<p id="englishDate"></p>
+            	<h1>A</h1>
+            	<h4>Holiday Calendar</h4>
+            	<a href="holiday.html">Visit Now <span>>></span></a>
+            </div>
+        </div>
+        <div class="contact">
+            <div class="row-1">
+                <h4>More Projects</h4>
+                <li class="col">
+                    <a href="odia-dictionary">Odia to English Dictionary</a>
+                </li>
+                <li class="col">
+                    <a href="odia-dictionary">English to Odia Dictionary</a>
+                </li>
+                <li class="col">
+                    <a href="odia-dictionary">Math Practice</a>
+                </li>
+                <li class="col">
+                    <a href="odia-dictionary">PDF Compressor</a>
+                </li>
+            </div>
+            <div class="row-2">
+                <img src="image/sandeep3.png">
+                <h4>Follow Me On:</h4>
+                <div class="social">
+                    <a href=""><img src="image/insta.png"></a>
+                    <!-- <a href=""><img src="image/telegram.png"></a> -->
+                    <a href=""><img src="image/facebook.png"></a>
+                    <a href=""><img src="image/whatsapp.png"></a>
+                    <a href=""><img src="image/github.png"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+	
+
+	<script>
+    // Function to get current date
+    function getCurrentDate() {
+        const today = new Date();
+        const options = { day: 'numeric', month: 'long', year: 'numeric' };
+        
+        // Format date in English
+        const englishDate = today.toLocaleDateString('en-IN', options);
+        
+        // Define Odia month names
+        const odiaMonths = [
+            "ଜାନୁଆରୀ", "ଫେବୃଆରୀ", "ମାର୍ଚ୍ଚ", "ଅପ୍ରେଲ", 
+            "ମେ", "ଜୁନ", "ଜୁଲାଇ", "ଅଗଷ୍ଟ", 
+            "ସେପ୍ଟେମ୍ବର", "ଅକ୍ଟୋବର", "ନଭେମ୍ବର", "ଡିସେମ୍ବର"
+        ];
+        
+        // Define day numbers in Odia
+        const odiaNumbers = ["୦", "୧", "୨", "୩", "୪", "୫", "୬", "୭", "୮", "୯"];
+        
+        // Extract date components
+        const day = today.getDate();
+        const month = odiaMonths[today.getMonth()];
+        const year = today.getFullYear();
+        
+        // Convert day and year to Odia script
+        const odiaDay = String(day).split('').map(d => odiaNumbers[parseInt(d)]).join('');
+        const odiaYear = String(year).split('').map(d => odiaNumbers[parseInt(d)]).join('');
+        
+        // Combine for final Odia date
+        const odiaDate = `${odiaDay} ${month} ${year}`;
+        
+        // Display dates
+        document.getElementById('englishDate').textContent = englishDate;
+        document.getElementById('odiaDate').textContent = odiaDate;
+    }
+    
+    // Call the function to set the dates on load
+    getCurrentDate();
+</script>
+</body>
+</html>
