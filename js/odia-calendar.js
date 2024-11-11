@@ -119,16 +119,16 @@ function displayEvents(year, month) {
     
     if (events) {
         for (const [day, eventObj] of Object.entries(events)) {
-            const eventItem = document.createElement('li');
+            const eventItem = document.createElement('div');
             const daySpan = document.createElement('span');
             daySpan.textContent = day;
-            const eventSpan = document.createElement('span');
+            const eventSpan = document.createElement('p');
             eventSpan.textContent = isOdia ? eventObj.or : eventObj.en;
             eventItem.append(daySpan, eventSpan);
             eventList.appendChild(eventItem);
         }
     } else {
-        const noEvents = document.createElement('li');
+        const noEvents = document.createElement('div');
         noEvents.textContent = isOdia ? 'ଏହି ମାସରେ କୌଣସି ଘଟଣା ନାହିଁ |' : 'No events this month.';
         eventList.appendChild(noEvents);
     }
