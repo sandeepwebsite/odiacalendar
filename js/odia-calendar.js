@@ -1,3 +1,29 @@
+const odiaDigits = ['୦', '୧', '୨', '୩', '୪', '୫', '୬', '୭', '୮', '୯'];
+// Saka Calendar Conversion Logic
+function gregorianToSaka(date) {
+    const sakaEpochStart = new Date('March 20, 2024');  // Chaitra 1 of the Saka year (approx.)
+    const diffTime = date - sakaEpochStart;  // Difference between the given date and the Saka Epoch
+    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));  // Convert diffTime to days
+
+    // Approximation of Saka year and month
+    const sakaYear = 1946 + Math.floor(diffDays / 365); // Calculate Saka Year based on the days difference
+    const sakaMonth = Math.floor((diffDays % 365) / 30);  // Approximate month (30 days per month)
+    const sakaDay = (diffDays % 365) % 30;  // Calculate the day within the month
+
+    return { sakaYear, sakaMonth, sakaDay };
+}
+
+
+// Convert numeric month to Saka month name
+function getSakaMonthName(monthIndex) {
+    const sakaMonthNames = [
+        'ଚୈତ୍ର', 'ୱୈଶାଖ', 'ଜ୍ୟେଷ୍ଠ', 'ଆଷାଢ', 'ଶ୍ରାବଣ', 'ଭାଦ୍ରପଦ',
+        'ଆଶ୍ୱୟୁଜ', 'କାର୍ତ୍ତିକ', 'ମାଗିର୍', 'ଫାଗୁଣ', 'ଚତୁର୍ମାସ', 'ପୂଷ'
+    ];
+    return sakaMonthNames[monthIndex];
+}
+
+// Event data structure for various years and months
 const monthEvents = {
     2024: {
         0: { 15: { en: "Makar Sankranti/Pongal", or: "ମକର ସଂକ୍ରାନ୍ତି/ପୋଙ୍ଗାଲ୍" }, 26: { en: "Republic Day", or: "ଗଣତନ୍ତ୍ର ଦିବସ" }},
@@ -57,16 +83,11 @@ const monthEvents = {
     }
 };
 
-const selectMonth = document.getElementById('select_month');
-const selectYear = document.getElementById('select_year');
-const calendarDays = document.getElementById('calendar_days');
-const calendarDates = document.getElementById('calendar_dates');
-const eventList = document.getElementById('eventList');
-const translateBtn = document.getElementById('translate_btn');
+
 
 let currentMonth = new Date().getMonth();
 let currentYear = new Date().getFullYear();
-let isOdia = true; // Flag for language state
+let isOdia = true;  // Flag for language toggle
 
 const monthNames = {
     odia: ['ଜାନୁଆରୀ', 'ଫେବୃଆରୀ', 'ମାର୍ଚ୍ଚ', 'ଏପ୍ରିଲ୍', 'ମେ', 'ଜୁନ୍', 'ଜୁଲାଇ', 'ଅଗଷ୍ଟ', 'ସେପ୍ଟେମ୍ବର', 'ଅକ୍ଟୋବର', 'ନଭେମ୍ବର', 'ଡିସେମ୍ବର'],
@@ -77,6 +98,13 @@ const dayNames = {
     odia: ['ରବି', 'ସୋମ', 'ମଙ୍ଗଳ', 'ବୁଧ', 'ଗୁରୁ', 'ଶୁକ୍ର', 'ଶନି'],
     english: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 };
+
+const selectMonth = document.getElementById('select_month');
+const selectYear = document.getElementById('select_year');
+const calendarDays = document.getElementById('calendar_days');
+const calendarDates = document.getElementById('calendar_dates');
+const eventList = document.getElementById('eventList');
+const translateBtn = document.getElementById('translate_btn');
 
 function populateMonthYear() {
     selectMonth.innerHTML = '';
@@ -99,7 +127,6 @@ function populateMonthYear() {
     }
 }
 
-// Populate day names
 function populateDayNames() {
     calendarDays.innerHTML = '';
     const currentDayNames = isOdia ? dayNames.odia : dayNames.english;
@@ -112,11 +139,10 @@ function populateDayNames() {
     });
 }
 
-// Display events for the selected month in the chosen language
 function displayEvents(year, month) {
     eventList.innerHTML = '';
     const events = monthEvents[year] && monthEvents[year][month];
-    
+
     if (events) {
         for (const [day, eventObj] of Object.entries(events)) {
             const eventItem = document.createElement('div');
@@ -134,9 +160,6 @@ function displayEvents(year, month) {
     }
 }
 
-// Generate calendar dates
-const odiaDigits = ['୦', '୧', '୨', '୩', '୪', '୫', '୬', '୭', '୮', '୯'];
-
 function generateDates() {
     calendarDates.innerHTML = '';
     selectMonth.value = currentMonth;
@@ -149,8 +172,75 @@ function generateDates() {
     const todayDay = today.getDate();
     const todayMonth = today.getMonth();
     const todayYear = today.getFullYear();
-    console.log(todayDay);
-    document.getElementById("fullcalendardate").innerHTML = todayDay;
+
+    // Calculate the Saka date for today
+    const { sakaYear, sakaMonth, sakaDay } = gregorianToSaka(today);
+    const paksha = getPaksha(sakaDay + 1);
+    const tithi = getTithi(sakaDay + 1); // Calculate Tithi (lunar day)
+
+// Function to calculate the Paksha (Shukla or Krishna)
+function getPaksha(day) {
+    if (day <= 15) {
+        return 'କୃଷ୍ଣ ପକ୍ଷ,'; // Waxing phase
+    } else {
+        return 'ଶୁକ୍ଳ ପକ୍ଷ,'; // Waning phase
+    }
+}
+
+function getTithi(day) {
+    const tithi = day % 15 === 0 ? 15 : day % 15; // If it's 15th day, Tithi is 15
+
+
+// const numbersInWords = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+
+const numbersInWords = [
+    "ପ୍ରଥମ",    // First
+    "ଦ୍ୱିତୀୟ",   // Second
+    "ତୃତୀୟ",    // Third
+    "ଚତୁର୍ଥ",   // Fourth
+    "ପଞ୍ଚମ",    // Fifth
+    "ଷଷ୍ଠ",     // Sixth
+    "ସପ୍ତମ",    // Seventh
+    "ଅଷ୍ଟମ",    // Eighth
+    "ନବମ",      // Ninth
+    "ଦଶମ",      // Tenth
+    "ଏକାଦଶୀ",   // Eleventh
+    "ଦ୍ୱାଦଶ",   // Twelfth
+    "ତ୍ରୟୋଦଶ", // Thirteenth
+    "ଚତୁର୍ଦ୍ଦଶ" // Fourteenth
+];
+
+function numberToWord(number) {
+    // Check if the number is within the valid range (1 to 9)
+    if (number >= 1 && number <= 14) {
+        return numbersInWords[number - 1];  // Adjust index for 0-based array
+    } else {
+        return 'Number out of range';
+    }
+}
+
+// let x = tithi;
+const inputNumber = tithi;
+const purnima = day-1;
+    if (purnima === 30) {
+            document.getElementById("demo").innerHTML = "ପୂର୍ଣ୍ଣିମା ତିଥି";
+    }
+    else if (purnima === 15){
+            document.getElementById("demo").innerHTML = "ଅମାବାସ୍ୟା ତିଥି";
+    }
+    else{
+            document.getElementById("demo").innerHTML = numberToWord(inputNumber) + " ତିଥି";
+    }
+        return tithi;
+    }
+
+
+
+
+
+    // Update the Saka Date in the header
+    document.getElementById("saka-calendar-date").textContent = `${sakaYear} ଶତାବ୍ଦ, ${getSakaMonthName(sakaMonth)} ମାସ, ${sakaDay} ଦିନ ,${paksha}`;
+
     for (let i = 0; i < firstDayOfWeek; i++) {
         const emptyCell = document.createElement('div');
         calendarDates.appendChild(emptyCell);
@@ -173,10 +263,6 @@ function generateDates() {
         if (monthEvents[currentYear] && monthEvents[currentYear][currentMonth] && monthEvents[currentYear][currentMonth][day]) {
             dayCell.classList.add('event-date');
             dayCell.title = isOdia ? monthEvents[currentYear][currentMonth][day].or : monthEvents[currentYear][currentMonth][day].en;
-        // Apply a yellow background to 20 and 22 in November (month ID 10)
-            if (currentMonth === 10 && (day === 14 || day === 15)) {
-                dayCell.style.backgroundColor = '#ff7f7f';
-            }
         }
         calendarDates.appendChild(dayCell);
     }
@@ -184,57 +270,56 @@ function generateDates() {
     displayEvents(currentYear, currentMonth);
 }
 
-// Switch month function
-function switchMonth(direction) {
-    if (direction === -1) {
-        currentMonth--;
-        if (currentMonth < 0) {
-            currentMonth = 11; // December
-            currentYear--;
-        }
-    } else if (direction === 1) {
-        currentMonth++;
-        if (currentMonth > 11) {
-            currentMonth = 0; // January
-            currentYear++;
-        }
-    }
-    generateDates();
-}
-
-// Switch language
 function switchLanguage() {
     isOdia = !isOdia;
-translateBtn.textContent = isOdia ? 'English' : 'ଓଡ଼ିଆ';
+    translateBtn.textContent = isOdia ? 'English' : 'ଓଡ଼ିଆ';
     populateMonthYear();
     populateDayNames();
     generateDates();
 }
 
-// Event listeners
-document.getElementById('prev_month').addEventListener('click', () => switchMonth(-1));
-document.getElementById('next_month').addEventListener('click', () => switchMonth(1));
+document.getElementById('prev_month').addEventListener('click', () => {
+    if (currentMonth === 0) {
+        currentMonth = 11;
+        currentYear--;
+    } else {
+        currentMonth--;
+    }
+    generateDates();
+});
+
+document.getElementById('next_month').addEventListener('click', () => {
+    if (currentMonth === 11) {
+        currentMonth = 0;
+        currentYear++;
+    } else {
+        currentMonth++;
+    }
+    generateDates();
+});
+
 document.getElementById('curr_month').addEventListener('click', () => {
     currentMonth = new Date().getMonth();
     currentYear = new Date().getFullYear();
     generateDates();
 });
-selectMonth.addEventListener('change', () => {
-    currentMonth = parseInt(selectMonth.value);
-    generateDates();
-});
-selectYear.addEventListener('change', () => {
-    currentYear = parseInt(selectYear.value);
-    generateDates();
-});
+
 translateBtn.addEventListener('click', switchLanguage);
 
-// Initial setup
+selectMonth.addEventListener('change', (e) => {
+    currentMonth = e.target.value;
+    generateDates();
+});
+
+selectYear.addEventListener('change', (e) => {
+    currentYear = e.target.value;
+    generateDates();
+});
+
+// Initialize the calendar
 populateMonthYear();
 populateDayNames();
 generateDates();
-
-
 
 $(document).ready(function(){
   $("#fullcalendarIcon").click(function(){
@@ -242,4 +327,3 @@ $(document).ready(function(){
     $(".event").css("display", "none");
   });
 });
-
