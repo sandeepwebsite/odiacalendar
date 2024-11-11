@@ -8,8 +8,38 @@ const monthEvents = {
         6: { 4: { en: "Independence Day", or: "ସ୍ଵାଧୀନତା ଦିବସ" }},
         7: { 1: { en: "Friendship Day", or: "ମିତ୍ରତା ଦିବସ" }},
         8: { 5: { en: "Teacher's Day", or: "ଶିକ୍ଷକ ଦିବସ" }},
-        9: { 31: { en: "Halloween", or: "ହେଲୋୱିନ୍" }},
-        10: { 14: { en: "Diwali", or: "ଦୀପାବଳି" }, 14: { en: "Children's Day", or: "ଶିଶୁ ଦିବସ" }},
+        9: { 31: { en: "Diwali", or: "ଦୀପାବଳି" }},
+        10: { 
+            // 1: { en: "Diwali", or: "ଦୀପାବଳି" }, 
+            // 14: { en: "Children's Day", or: "ଶିଶୁ ଦିବସ" },
+
+                1: { en: "Kartika Amabasya 2024", or: "କାର୍ତ୍ତିକ  ଅମାବାସ୍ୟା" },
+                2: { en: "Gobardhan Puja", or: "ଗୋବର୍ଦ୍ଧନ ପୂଜା"},
+                3: { en: "Bhatru Ditiya", or: "ଭାତୃ ଦ୍ଵିତୀୟା ଓ ଚନ୍ଦ୍ରଦର୍ଶନ" },
+                5: { en: "Naga Chaturthi Brata 2024", or: "ନାଗ ଚତୁର୍ଥୀ ବ୍ରତ" },
+                8: { en: "Solasasana Ambruta Mahoni Bhoga", or: "ଷୋଳଶାସନ ଅମୃତ ମଣୋହି ଭୋଗ" },
+                9: { en: "Gosthastami 2024", or: "ଗୋଷ୍ଠାଷ୍ଟମୀ" },
+                10: { en: "Anla Nabami and Jagatdhatri Puja", or: "ଅଁଳା ନବମୀ, ଶ୍ରୀ ରାଧାଙ୍କ ପାଦ ଦର୍ଶନ ଓ ଜଗଦ୍ଧାତ୍ରୀ ପୂଜା" },
+                12: { en: "Debo Uthana Akadasi, Bhisma Panchaka Brata", or: "ଦେବେ।ତ୍ଅ।ପନ (ବଡ଼) ଏକାଦଶୀ, ଭୀଷ୍ମ ପଞ୍ଚକ ବ୍ରତ, ଶରଣ ଶେଷ ଓ ହଳ ନିଷେଧ" },
+                13: { en: "Garuda Dwadasi 2024, Tulasi Bibah", or: "ଗରୁଡ଼ ଦ୍ଵାଦଶୀ ଓ ତୁଳସୀ ବିବାହ" },
+                14: { en: "Badaosa 2024, Bada Osa 2024, Sisu Sibasa, Neheru Jayanti", or: "ବଡ଼ଓଷା, ଶିବୋଧପନ, ବୈକୁଣ୍ଠ ଚତୁର୍ଦ୍ଦଶୀ, ଶିଶୁ ଦିବସ(ନେହେରୁଙ୍କ ଜୟନ୍ତୀ)" },
+                15: { en: "Rasa Purnima 2024, Bali Jatra 2024, Kartikeswar Puja, Kartika Brata Samapana, Kedara Brata", or: "ରାସ ପୂର୍ଣ୍ଣିମା, ବାଲିଯାତ୍ରା, କାର୍ତ୍ତିକେଶ୍ୱର ପୂଜା, କାର୍ତ୍ତିକ ବ୍ରତ ସମାପନ, ଚନ୍ଦ୍ରପୂଜା ଓ କେଦାର ବ୍ରତ" },
+                16: { en: "Bichha Sankranti, Chadakhai 2024", or: "ବିଛା ସଂକ୍ରାନ୍ତି, ଛାଡ଼ଖାଇ ଓ ହ.ନି" },
+                20: { en: "Sita Bibah", or: "ସୀତା ବିବାହ ଓ ଶ୍ରୀକ୍ଷେତ୍ର ପରିକ୍ରମା" },
+                21: { en: "Margasira Gurubar Osa 2024", or: "ମାର୍ଗଶୀର ଗୁରୁବାର ଓଷା" },
+                23: { en: "Prathamastami 2024", or: "ପ୍ରଥମାଷ୍ଟମୀ" },
+                24: { en: "Kanjianla Nabami 2024", or: "କାଞ୍ଜିଅଁଳା ନବମୀ" },
+                26: { en: "Upasana Ekadasi", or: "ଉତ୍ପନ୍ନା ଏକାଦଶୀ, ଉପବାସ ଓ ହ. ନି"},
+                28: { en: "Manabasa Osha", or: "ମାଣବସା ଗୁରୁବାର ଓଷା"},
+                29: { en: "Shivachaturdasi Upasana", or: "ଶିବଚତୁର୍ଦ୍ଦଶୀ ଉପବାସ"},
+                30: { en: "Debadipapali arambha", or: "ଦେବଦୀପାବଳୀ ଆରମ୍ଭ, ଚନ୍ଦ୍ରକ୍ଷୟ ଓ ଦଳ ନିଷେଧ"}
+
+
+
+
+            // 20: { en: "Special Event 1", or: "ବିଶେଷ ଘଟଣା 1" },
+            // 22: { en: "Special Event 2", or: "ବିଶେଷ ଘଟଣା 2" }
+        },
         11: { 25: { en: "Christmas", or: "ବଡ଼ଦିନ" }, 31: { en: "New Year's Eve", or: "ନୂତନ ବର୍ଷ ପୂର୍ବସନ୍ଧ୍ୟା" }}
     },
     2025: {
@@ -143,6 +173,10 @@ function generateDates() {
         if (monthEvents[currentYear] && monthEvents[currentYear][currentMonth] && monthEvents[currentYear][currentMonth][day]) {
             dayCell.classList.add('event-date');
             dayCell.title = isOdia ? monthEvents[currentYear][currentMonth][day].or : monthEvents[currentYear][currentMonth][day].en;
+        // Apply a yellow background to 20 and 22 in November (month ID 10)
+            if (currentMonth === 10 && (day === 14 || day === 15)) {
+                dayCell.style.backgroundColor = '#ff7f7f';
+            }
         }
         calendarDates.appendChild(dayCell);
     }
