@@ -35,6 +35,12 @@ header #fullcalendardate{
     top: 5px;
     z-index: 1;
 }
+#fullcalendarIcon{
+    display: none;
+}
+.date-info{
+    text-align: center;
+}
 #calendar_dates {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
@@ -82,6 +88,7 @@ header #fullcalendardate{
     border-radius: 5px;
     outline: none;
     font-family: "Noto Serif Oriya", serif;
+    background-color: floralwhite;
 }
 button {
 /*    margin: 5px;*/
@@ -112,17 +119,16 @@ button:hover {
 }
 
 .day-name {
-    font-weight: bold;
-    color: red;
+    color: #DAF7A6;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 3px;
     background-color: #000033;
-    color: white;
     border: 1px solid #ddd;
     border-radius: 4px;
+
 }
 
 .today {
@@ -144,9 +150,9 @@ button:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     font-family: "Noto Sans Oriya", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 400;
+  font-weight: 300;
   font-style: normal;
-  font-variation-settings: "wdth" 200;
+  font-variation-settings: "wdth" 100;
 }
 #eventList div span{
     font-size: 1.1rem;
@@ -159,10 +165,10 @@ button:hover {
     background-color: #0080ff; 
 }
 #eventList div:nth-child(odd) {
-  background-color: #ffbf00;
+  background-color: #2c3f50;
 }
 #eventList div:nth-child(even) {
-  background-color: #000033;
+  background-color: #34495e;
   color: #DAF7A6;
 }
 
