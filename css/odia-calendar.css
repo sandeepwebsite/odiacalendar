@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Oriya:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Oriya:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 *{
     margin: 0;
@@ -7,7 +8,32 @@
 }
 body {
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(to right, #536976, #292e49);
+/*    background: linear-gradient(to right, #536976, #292e49);*/
+    background-color: #DAF7A6;
+}
+header{
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+header h1{
+    text-shadow: 2px 2px  2px black;
+    color: orange;
+}
+header, header div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header img{
+    width: 32px;
+    height: 32px;
+    filter:drop-shadow(5px 5px 5px)
+}
+header #fullcalendardate{
+    position: relative;
+    left: 25px;
+    top: 5px;
+    z-index: 1;
 }
 #calendar_dates {
     display: grid;
@@ -73,13 +99,10 @@ button:hover {
 }
 
 .date.sunday {
-    background-color: #ff0066; /* Light red for Sundays */
+    background-color: #FF5733;
+    font-weight: bold;
 }
 
-.event-date {
-    background-color: purple; /* Purple background for event dates */
-    color: white; /* White text on event dates */
-}
 
 #calendar_days {
     display: grid;
@@ -96,15 +119,17 @@ button:hover {
     justify-content: center;
     align-items: center;
     padding: 3px;
-    background-color: #f0f0f0; /* Light gray background */
+    background-color: #000033;
+    color: white;
     border: 1px solid #ddd;
     border-radius: 4px;
 }
 
 .today {
-    background-color: #4CAF50; /* Green background */
-    color: white; /* White text */
-    font-weight: bold; /* Bold text for emphasis */
+    background-color: #4CAF50;
+    border-radius: 100px;
+    color: white;
+    font-weight: bold;
 }
 .event{
     padding: 10px;
@@ -112,63 +137,38 @@ button:hover {
 #eventList{
     align-items: center;
 }
-#eventList li{
+#eventList div{
     display: flex;
     align-items: center;
     margin: 5px;
-/*    border-left: solid 4px #000000;*/
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-family: "Noto Sans Oriya", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 200;
 }
-#eventList li span{
-    font-size: 1.2rem;
+#eventList div span{
+    font-size: 1.1rem;
+    width: 2rem;
     border-radius: 5px;
-    color: black;
+    color: white;
     text-align: center;
     margin: 5px;
+    padding: 5px;
+    background-color: #0080ff; 
 }
-#eventList li span:nth-child(1) {
-  background-color: #0080ff;
-  padding: 5px;
-  color: white;
-}
-/*#eventList li:nth-child(1) {
-  background-color: #0080ff;
-}
-#eventList li:nth-child(2) {
+#eventList div:nth-child(odd) {
   background-color: #ffbf00;
 }
-#eventList li:nth-child(3) {
-  background-color: #ff0066;
-}
-#eventList li:nth-child(4) {
+#eventList div:nth-child(even) {
   background-color: #000033;
-}*/
+  color: #DAF7A6;
+}
 
 #translate_btn{
     background-color: transparent;
-}
-header{
-    padding: 10px;
-}
-header h1{
-    text-shadow: 2px 2px  2px black;
-    color: orange;
-}
-header, header div{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-header img{
-    width: 32px;
-    height: 32px;
-    filter:drop-shadow(5px 5px 5px)
-}
-header #fullcalendardate{
-    position: relative;
-    left: 25px;
-    top: 5px;
-    z-index: 1;
+    color: black;
 }
 
 
