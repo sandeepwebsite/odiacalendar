@@ -3,18 +3,20 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Cache-Control" content="max-age=31536000, public">
+    <meta http-equiv="Expires" content="Thu, 31 Dec 2099 23:59:59 GMT"> 
 	<title>Odisha Calendar</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
 <div class="container">
 	<div class="header">
-        <img src="image/jagannath.png">
+        <img src="image/jagannath.png?v=1.0.0">
         <h2>Odia Calendar</h2>
     </div>
     <div class="main">
         <div class="heading">
-            <img src="image/calendar-banner.jpg">
+            <img src="image/calendar-banner.jpg?v=1.0.0">
 		<br>
         </div>
         <div class="card">
@@ -48,14 +50,14 @@
                 </li>
             </div>
             <div class="row-2">
-                <img src="image/sandeep3.png">
+                <img src="image/sandeep3.png?v=1.0.0">
                 <h4>Follow Me On:</h4>
                 <div class="social">
-                    <a href="https://www.instagram.com/sandeep_kumar_mohanta/"><img src="image/insta.png"></a>
+                    <a href="https://www.instagram.com/sandeep_kumar_mohanta/"><img src="image/insta.png?v=1.0.0"></a>
                     <!-- <a href=""><img src="image/telegram.png"></a> -->
-                    <a href="https://www.facebook.com/sondip.asdeepu"><img src="image/facebook.png"></a>
-                    <a href="https://wa.me/919668491970?text=Hello%20Sandeep..!"><img src="image/whatsapp.png"></a>
-                    <a href="https://github.com/sandeepwebsite/"><img src="image/github.png"></a>
+                    <a href="https://www.facebook.com/sondip.asdeepu"><img src="image/facebook.png?v=1.0.0"></a>
+                    <a href="https://wa.me/919668491970?text=Hello%20Sandeep..!"><img src="image/whatsapp.png?v=1.0.0"></a>
+                    <a href="https://github.com/sandeepwebsite/"><img src="image/github.png?v=1.0.0"></a>
                 </div>
             </div>
         </div>
@@ -101,6 +103,20 @@
     
     // Call the function to set the dates on load
     getCurrentDate();
+
+
+    if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('js/service-worker.js')
+        .then(registration => {
+            console.log('Service Worker registered with scope:', registration.scope);
+        })
+        .catch(error => {
+            console.log('Service Worker registration failed:', error);
+        });
+    });
+}
+
 </script>
 </body>
 </html>
