@@ -191,16 +191,17 @@ document.addEventListener("DOMContentLoaded", function() {
                   }
             },
             2025: {
-                0: {14: "Makar Sankranti", 23: "Subash Chandra Bose Jayanti / Vir Surendrasai Jayanti"},
-                1: {26: "Maha Shivaratri"},
+                0: {14: "Makar Sankranti", 23: "Subash Chandra Bose Jayanti / Vir Surendrasai Jayanti", 26: "Republic Day"},
+                1: {2: "Basanta Panchami", 26: "Maha Shivaratri"},
                 2: {5: "Panchayati Raj Divas", 14: "Dola Purnima", 15: "Holi", 31: "Id-ul-Fitre"},
-                3: {1: "Utkal Divas", 14: "Maha Vishuva Sankranti/ Dr. B.R. Ambedkar Jayanti", 18: "Good Friday"},
+                3: {1: "Utkal Divas", 3: "Sri Ram Navami", 14: "Maha Vishuva Sankranti/ Dr. B.R. Ambedkar Jayanti", 18: "Good Friday"},
                 4: {12: "Buddha Purnima/ Birthday of Pt. Raghunath Murmu", 27: "Sabitri Amabasya"},
-                5: {7: "Id-ul-Zuha", 27: "Ratha Yatra"},
-                7: {15: "Independence Day/ Janmastami", 27: "Ganesh Puja", 28: "Nuakhai"},
-                8: {5: "Birthday of Prophet Muhammad", 29: "Mahasaptami", 30: "Mahastami"},
+                5: {7: "Id-ul-Zuha", 14: "Pahili Raja (2nd Saturday)", 15: "Raja Sankranti", 27: "Ratha Yatra"},
+                6: {5: "Bahuda Yatra(Optional Holiday)", 6: "Muharram"},
+                7: {9: "Jhulana Purnima (2nd Saturday)", 15: "Independence Day/ Janmastami", 27: "Ganesh Puja", 28: "Nuakhai"},
+                8: {5: "Birthday of Prophet Muhammad", 21: "Mahalaya", 29: "Mahasaptami", 30: "Mahastami"},
                 9: {1: "Mahanavami", 2: "Vijaya Dasami/ Gandhi Jayanti", 7: "Kumar Purnima", 21: "Diwali"},
-                10: {5: "Rahas Purnima"},
+                10: {5: "Rahas Purnima", 12: "Prathamastami(Optional Holiday)"},
                 11: {25: "X-Mas Day"}
             }  
         }
