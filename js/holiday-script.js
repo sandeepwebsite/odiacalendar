@@ -215,7 +215,7 @@ document.addEventListener("DOMContentLoaded", function() {
             selectMonth.appendChild(option);
         });
 
-        for (let year = 2024; year <= 2026; year++) {
+        for (let year = 2024; year <= 2025; year++) {
             const option = document.createElement('option');
             option.value = year;
             option.textContent = year;
