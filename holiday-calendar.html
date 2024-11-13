@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="max-age=31536000, public">
+    <meta http-equiv="Expires" content="Thu, 31 Dec 2099 23:59:59 GMT">
     <title>Monthly Calendar with Events</title>
     <link rel="stylesheet" href="css/holiday-style.css">
     <link rel="stylesheet" type="text/css" href="css/common.css">
@@ -54,18 +56,32 @@
     <br><br><br>
     <div class="mob-menu">
         <li>
-            <img src="image/calendar2.png">
+            <img src="image/calendar2.png?v=1.0.0">
             <a href="odia-calendar.html">Odia</a>
         </li>
         <li class="dual-border">
-            <img src="image/home.png">
+            <img src="image/home.png?v=1.0.0">
             <a href="index.html">Home</a></li>
         <li class="active">
-            <img src="image/calendar2.png">
+            <img src="image/calendar2.png?v=1.0.0">
             <a href="holiday-calendar.html">Holiday</a>
         </li>
     </div>
 
-    <script src="js/holiday-script.js"></script>
+    <script src="js/holiday-script.js?v=1.0.0"></script>
+    <script>
+            if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/js/service-worker.js')
+                .then(registration => {
+                    console.log('Service Worker registered with scope:', registration.scope);
+                })
+                .catch(error => {
+                    console.log('Service Worker registration failed:', error);
+                });
+            });
+        }
+
+    </script>
 </body>
 </html>
