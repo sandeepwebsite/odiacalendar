@@ -110,19 +110,18 @@ document.addEventListener("DOMContentLoaded", function() {
                   }
             },
             2025: {
-                0: { 1: "New Year", 2: "Winter Vacation End", 14:  "Makar sankranti/Pongal", 26:  "Republic Day"},
-                1: {2: "Basanta Panchami", 26: "Mahasiba Ratri / Jagara"},
-                2: {13: "Holi"},
-                3: { 1: "Utkal Divas", 11: "Idu'l Fitr", 18: "Good Friday"},
-                4: {12: "Budha Purnima"},
-                5: {17: "Idu'l Zuha (Bakrid)"},
-                6: {7: "Muharram", 15: "Bahuda yatra"},
-                7: {15: "Independence Day", 19: "Raksha Bandhan",  26: " Janmaastami"},
-                8: {16: "Milad-Un-Nabi or Id-E-Milad (Birthday of prophet Mohammad)"},
-                9: {2: "Mahatma Gandhi's Birthday", 11: "Dusshera (Maha Navami)", 12: "Dussehra (Vijaya Dashmi)", 31: "Diwali (Deepavali)"},
-                10: {2: "Govardhan Puja", 7: " Pratihar Shasthi/Surya Shasthi", 15: "Guru Nanak's Birthday", 23: "Prathama Ashtami"},
-                11: {25: "Christmas Day"}
-            }
+                0: {14: "Makar Sankranti", 23: "Subash Chandra Bose Jayanti / Vir Surendrasai Jayanti"},
+                1: {26: "Maha Shivaratri"},
+                2: {5: "Panchayati Raj Divas", 14: "Dola Purnima", 15: "Holi", 31: "Id-ul-Fitre"},
+                3: {1: "Utkal Divas", 14: "Maha Vishuva Sankranti/ Dr. B.R. Ambedkar Jayanti", 18: "Good Friday"},
+                4: {12: "Buddha Purnima/ Birthday of Pt. Raghunath Murmu", 27: "Sabitri Amabasya"},
+                5: {7: "Id-ul-Zuha", 27: "Ratha Yatra"},
+                7: {15: "Independence Day/ Janmastami", 27: "Ganesh Puja", 28: "Nuakhai"},
+                8: {5: "Birthday of Prophet Muhammad", 29: "Mahasaptami", 30: "Mahastami"},
+                9: {1: "Mahanavami", 2: "Vijaya Dasami/ Gandhi Jayanti", 7: "Kumar Purnima", 21: "Diwali"},
+                10: {5: "Rahas Purnima"},
+                11: {25: "X-Mas Day"}
+            }      
         },
         state: {
             2024: {
@@ -190,7 +189,20 @@ document.addEventListener("DOMContentLoaded", function() {
                     25: "X-Mas Day",
                     24: "Christmas Eve (Optional Holiday)"
                   }
-            }
+            },
+            2025: {
+                0: {14: "Makar Sankranti", 23: "Subash Chandra Bose Jayanti / Vir Surendrasai Jayanti"},
+                1: {26: "Maha Shivaratri"},
+                2: {5: "Panchayati Raj Divas", 14: "Dola Purnima", 15: "Holi", 31: "Id-ul-Fitre"},
+                3: {1: "Utkal Divas", 14: "Maha Vishuva Sankranti/ Dr. B.R. Ambedkar Jayanti", 18: "Good Friday"},
+                4: {12: "Buddha Purnima/ Birthday of Pt. Raghunath Murmu", 27: "Sabitri Amabasya"},
+                5: {7: "Id-ul-Zuha", 27: "Ratha Yatra"},
+                7: {15: "Independence Day/ Janmastami", 27: "Ganesh Puja", 28: "Nuakhai"},
+                8: {5: "Birthday of Prophet Muhammad", 29: "Mahasaptami", 30: "Mahastami"},
+                9: {1: "Mahanavami", 2: "Vijaya Dasami/ Gandhi Jayanti", 7: "Kumar Purnima", 21: "Diwali"},
+                10: {5: "Rahas Purnima"},
+                11: {25: "X-Mas Day"}
+            }  
         }
     };
 
