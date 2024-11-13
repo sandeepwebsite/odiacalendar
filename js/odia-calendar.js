@@ -66,7 +66,21 @@ const monthEvents = {
             // 20: { en: "Special Event 1", or: "ବିଶେଷ ଘଟଣା 1" },
             // 22: { en: "Special Event 2", or: "ବିଶେଷ ଘଟଣା 2" }
         },
-        11: { 25: { en: "Christmas", or: "ବଡ଼ଦିନ" }, 31: { en: "New Year's Eve", or: "ନୂତନ ବର୍ଷ ପୂର୍ବସନ୍ଧ୍ୟା" }}
+        11: {
+            1: { en: "Konark Dance Festival 2024 Start, Mahodadhi Amavasya, Madhya Deba Dipabali, Suryamahati Snana", or: "କୋଣାର୍କ ନୃତ୍ୟୋତ୍ସବ 2024 ଆରମ୍ଭ, ମହୋଦଧି ଅମାବାସ୍ୟା, ମଧ୍ୟ ଦେବ ଦୀପାବଳି, ସୂର୍ଯ୍ୟମହାତି ସ୍ନାନ" },
+            4: { en: "Rambha Tritiya", or: "ରମ୍ଭା ତୃତୀୟା" },
+            5: { en: "Manabasa Gurubar Osa", or: "ମାଣବସା ଗୁରୁବାର ଓଷା" },
+            7: { en: "Odhana 2024, Prabana Sasthi", or: "ଓଢାନା 2024, ପ୍ରବଣ ସଷ୍ଠୀ" },
+            12: { en: "Byanjan Dwadasi 2024", or: "ବ୍ୟଞ୍ଜନ ଦ୍ୱାଦଶୀ 2024" },
+            13: { en: "Ananga Trayodasi, Geeta Jayanti 2024", or: "ଅନଙ୍ଗ ତ୍ରୟୋଦଶୀ, ଗୀତା ଜୟନ୍ତୀ 2024" },
+            14: { en: "Pandu Osa 2024", or: "ପାଣ୍ଡୁ ଓଷା 2024" },
+            15: { en: "Purnima", or: "ପୂର୍ଣ୍ଣିମା" },
+            16: { en: "Dhanu Sankranti 2024, Pahili Bhoga 2024", or: "ଧନୁ ସଂକ୍ରାନ୍ତି 2024, ପହିଲି ଭୋଗ 2024" },
+            17: { en: "Danda Panhara, Bata Osa 2024", or: "ଡାଣ୍ଡା ପାନହାରା, ବଟ ଓଷା 2024" },
+            23: { en: "Pathani Samanta Jayanti", or: "ପଥାନୀ ସାମନ୍ତ ଜୟନ୍ତୀ" },
+            25: { en: "Jisu Khrista Janma, Christmas 2024", or: "ଯୀଶୁ ଖ୍ରୀଷ୍ଟ ଜନ୍ମ, ବଡ଼ଦିନ 2024" },
+            30: { en: "Bakula Amavasya", or: "ବକୁଳା ଅମାବାସ୍ୟା" }
+          }          
     },
     2025: {
         0: { 15: { en: "Makar Sankranti/Pongal", or: "ମକର ସଂକ୍ରାନ୍ତି/ପୋଙ୍ଗାଲ୍" }, 26: { en: "Republic Day", or: "ଗଣତନ୍ତ୍ର ଦିବସ" }},
