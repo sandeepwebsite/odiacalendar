@@ -228,14 +228,14 @@ const numbersInWords = [
 function numberToWord(number) {
     // Check if the number is within the valid range (1 to 9)
     if (number >= 1 && number <= 15) {
-        return numbersInWords[number];  // Adjust index for 0-based array
+        return numbersInWords[number-1];  // Adjust index for 0-based array
     } else {
         return 'Number out of range';
     }
 }
 
 // let x = tithi;
-const inputNumber = tithi;
+const inputNumber = tithi-1; 
 const purnima = day-1;
     if (purnima === 30) {
             document.getElementById("demo").innerHTML = "ପୂର୍ଣ୍ଣିମା ତିଥି";
