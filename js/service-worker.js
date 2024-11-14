@@ -11,6 +11,7 @@ const urlsToCache = [
     '/image/calendar-banner.jpg',
     '/image/calendar.png',
     '/image/calendar2.png',
+    '/image/holidays.png',
     '/image/facebook.png',
     '/image/github.png',
     '/image/home.png',

@@ -221,12 +221,13 @@ const numbersInWords = [
     "ଏକାଦଶୀ",   // Eleventh
     "ଦ୍ୱାଦଶ",   // Twelfth
     "ତ୍ରୟୋଦଶ", // Thirteenth
-    "ଚତୁର୍ଦ୍ଦଶ" // Fourteenth
+    "ଚତୁର୍ଦ୍ଦଶ", // Fourteenth
+    "ପଞ୍ଚଦଶ"
 ];
 
 function numberToWord(number) {
     // Check if the number is within the valid range (1 to 9)
-    if (number >= 1 && number <= 14) {
+    if (number >= 1 && number <= 15) {
         return numbersInWords[number - 1];  // Adjust index for 0-based array
     } else {
         return 'Number out of range';
