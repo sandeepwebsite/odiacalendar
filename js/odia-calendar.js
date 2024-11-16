@@ -17,8 +17,8 @@ function gregorianToSaka(date) {
 // Convert numeric month to Saka month name
 function getSakaMonthName(monthIndex) {
     const sakaMonthNames = [
-        'ଚୈତ୍ର', 'ୱୈଶାଖ', 'ଜ୍ୟେଷ୍ଠ', 'ଆଷାଢ', 'ଶ୍ରାବଣ', 'ଭାଦ୍ରପଦ',
-        'ଆଶ୍ୱୟୁଜ', 'କାର୍ତ୍ତିକ', 'ମାଗିର୍', 'ଫାଗୁଣ', 'ଚତୁର୍ମାସ', 'ପୂଷ'
+        'ଚୈତ୍ର', 'ୱୈଶାଖ', 'ଜ୍ୟେଷ୍ଠ', 'ଆଷାଢ', 'ଶ୍ରାବଣ', 'ଭାଦ୍ରବ',
+        'ଆଶ୍ୱିନ', 'କାର୍ତ୍ତିକ', 'ମାର୍ଗଶିର', 'ପୌଷ', 'ମାଘ', 'ଫଗୁଣ'
     ];
     return sakaMonthNames[monthIndex];
 }
