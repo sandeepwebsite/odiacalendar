@@ -154,7 +154,7 @@ button:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     font-family: "Noto Sans Oriya", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 300;
+  font-weight: 350;
   font-style: normal;
   font-variation-settings: "wdth" 100;
 }
@@ -166,10 +166,12 @@ button:hover {
     text-align: center;
     margin: 5px;
     padding: 5px;
-    background-color: #0080ff; 
+    background-color: #000033; 
 }
 #eventList div:nth-child(odd) {
-  background-color: white;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
 }
 #eventList div:nth-child(even) {
   background-color: #34495e;
