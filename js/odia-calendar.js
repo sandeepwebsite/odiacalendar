@@ -189,8 +189,8 @@ function generateDates() {
 
     // Calculate the Saka date for today
     const { sakaYear, sakaMonth, sakaDay } = gregorianToSaka(today);
-    const paksha = getPaksha(sakaDay + 1);
-    const tithi = getTithi(sakaDay); // Calculate Tithi (lunar day)
+    const paksha = getPaksha(sakaDay);
+    const tithi = getTithi(sakaDay +1); // Calculate Tithi (lunar day)
 
     // on 30days of month sakamonth will -1
     if (sakaDay === 30) {
