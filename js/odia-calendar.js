@@ -245,10 +245,27 @@ const purnima = day - 1;
     }
         return tithi;
     }
+//translate sakaDay & sakaYear into odia 
+const OdiaSakaYear = sakaYear;
+const OdiaSakaDay = sakaDay;
+const englishDigits = '0123456789';
+const odiaDigits = '୦୧୨୩୪୫୬୭୮୯';
 
+    function translateNumberToOdia(number) {
+        let translatedNumber = '';
+        const numberString = number.toString();
 
-    // Update the Saka Date in the header
-    document.getElementById("saka-calendar-date").textContent = `${sakaYear} ଶତାବ୍ଦ, ${getSakaMonthName(sakaMonthl)} ମାସ, ${sakaDay} ଦିନ, ${paksha}`;
+        for (let char of numberString) {
+            const index = englishDigits.indexOf(char);
+            translatedNumber += (index !== -1) ? odiaDigits[index] : char;
+        }
+
+        return translatedNumber;
+    }
+
+// Update the Saka Date in the header
+document.getElementById("saka-calendar-date").textContent = `${translateNumberToOdia(OdiaSakaYear)} ଶତାବ୍ଦ, ${getSakaMonthName(sakaMonthl)} ମାସ, ${translateNumberToOdia(OdiaSakaDay)} ଦିନ, ${paksha}`;
+
     for (let i = 0; i < firstDayOfWeek; i++) {
         const emptyCell = document.createElement('div');
         calendarDates.appendChild(emptyCell);
