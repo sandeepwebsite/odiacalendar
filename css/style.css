@@ -148,12 +148,12 @@ body {
     filter: drop-shadow(2px 2px 2px black)
 }
 .row-2 .social{
+    width: 90%;
+    margin: auto;
     display: flex;
-    justify-content: center;
-    align-items: center;
 }
 .row-2 .social img{
-    width: 20%;
+    width: 80%;
 }
 @media only screen and (orientation: landscape){
     .container{
