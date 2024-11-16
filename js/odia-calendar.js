@@ -1,18 +1,18 @@
 const odiaDigits = ['୦', '୧', '୨', '୩', '୪', '୫', '୬', '୭', '୮', '୯'];
 // Saka Calendar Conversion Logic
 function gregorianToSaka(date) {
-    const sakaEpochStart = new Date('March 20, 2024');  // Chaitra 1 of the Saka year (approx.)
+    const sakaEpochStart = new Date('March 20, 2024');  // Chaitra 1 (22 march) of the Saka year (approx.)
     const diffTime = date - sakaEpochStart;  // Difference between the given date and the Saka Epoch
     const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));  // Convert diffTime to days
 
     // Approximation of Saka year and month
     const sakaYear = 1946 + Math.floor(diffDays / 365); // Calculate Saka Year based on the days difference
-    const sakaMonth = Math.floor((diffDays % 365) / 30);  // Approximate month (30 days per month)
+    const sakaMonth = Math.floor((diffDays % 365) / 30)  // Approximate month (30 days per month)
     const sakaDay = (diffDays % 365) % 30 === 0 ? 30 : (diffDays % 365) % 30;  // Calculate the day within the month
+    // tithi = day % 15 === 0 ? 15 : day % 15;
 
     return { sakaYear, sakaMonth, sakaDay };
 }
-
 
 // Convert numeric month to Saka month name
 function getSakaMonthName(monthIndex) {
@@ -66,21 +66,7 @@ const monthEvents = {
             // 20: { en: "Special Event 1", or: "ବିଶେଷ ଘଟଣା 1" },
             // 22: { en: "Special Event 2", or: "ବିଶେଷ ଘଟଣା 2" }
         },
-        11: {
-            1: { en: "Konark Dance Festival 2024 Start, Mahodadhi Amavasya, Madhya Deba Dipabali, Suryamahati Snana", or: "କୋଣାର୍କ ନୃତ୍ୟୋତ୍ସବ 2024 ଆରମ୍ଭ, ମହୋଦଧି ଅମାବାସ୍ୟା, ମଧ୍ୟ ଦେବ ଦୀପାବଳି, ସୂର୍ଯ୍ୟମହାତି ସ୍ନାନ" },
-            4: { en: "Rambha Tritiya", or: "ରମ୍ଭା ତୃତୀୟା" },
-            5: { en: "Manabasa Gurubar Osa", or: "ମାଣବସା ଗୁରୁବାର ଓଷା" },
-            7: { en: "Odhana 2024, Prabana Sasthi", or: "ଓଢାନା 2024, ପ୍ରବଣ ସଷ୍ଠୀ" },
-            12: { en: "Byanjan Dwadasi 2024", or: "ବ୍ୟଞ୍ଜନ ଦ୍ୱାଦଶୀ 2024" },
-            13: { en: "Ananga Trayodasi, Geeta Jayanti 2024", or: "ଅନଙ୍ଗ ତ୍ରୟୋଦଶୀ, ଗୀତା ଜୟନ୍ତୀ 2024" },
-            14: { en: "Pandu Osa 2024", or: "ପାଣ୍ଡୁ ଓଷା 2024" },
-            15: { en: "Purnima", or: "ପୂର୍ଣ୍ଣିମା" },
-            16: { en: "Dhanu Sankranti 2024, Pahili Bhoga 2024", or: "ଧନୁ ସଂକ୍ରାନ୍ତି 2024, ପହିଲି ଭୋଗ 2024" },
-            17: { en: "Danda Panhara, Bata Osa 2024", or: "ଡାଣ୍ଡା ପାନହାରା, ବଟ ଓଷା 2024" },
-            23: { en: "Pathani Samanta Jayanti", or: "ପଥାନୀ ସାମନ୍ତ ଜୟନ୍ତୀ" },
-            25: { en: "Jisu Khrista Janma, Christmas 2024", or: "ଯୀଶୁ ଖ୍ରୀଷ୍ଟ ଜନ୍ମ, ବଡ଼ଦିନ 2024" },
-            30: { en: "Bakula Amavasya", or: "ବକୁଳା ଅମାବାସ୍ୟା" }
-          }          
+        11: { 25: { en: "Christmas", or: "ବଡ଼ଦିନ" }, 31: { en: "New Year's Eve", or: "ନୂତନ ବର୍ଷ ପୂର୍ବସନ୍ଧ୍ୟା" }}
     },
     2025: {
         0: { 15: { en: "Makar Sankranti/Pongal", or: "ମକର ସଂକ୍ରାନ୍ତି/ପୋଙ୍ଗାଲ୍" }, 26: { en: "Republic Day", or: "ଗଣତନ୍ତ୍ର ଦିବସ" }},
@@ -190,15 +176,14 @@ function generateDates() {
     // Calculate the Saka date for today
     const { sakaYear, sakaMonth, sakaDay } = gregorianToSaka(today);
     const paksha = getPaksha(sakaDay);
-    const tithi = getTithi(sakaDay +1); // Calculate Tithi (lunar day)
-
-    // on 30days of month sakamonth will -1
+    const tithi = getTithi(sakaDay + 1); // Calculate Tithi (lunar day)
+ 
+ // on 30days of month sakamonth will -1
     if (sakaDay === 30) {
         sakaMonthl = sakaMonth - 1;
     } else {
         sakaMonthl = sakaMonth;
     }
-
 
 // Function to calculate the Paksha (Shukla or Krishna)
 function getPaksha(day) {
@@ -230,7 +215,7 @@ const numbersInWords = [
     "ଦ୍ୱାଦଶ",   // Twelfth
     "ତ୍ରୟୋଦଶ", // Thirteenth
     "ଚତୁର୍ଦ୍ଦଶ", // Fourteenth
-    "ପଞ୍ଚଦଶ"
+    "pandara"
 ];
 
 function numberToWord(number) {
@@ -244,10 +229,11 @@ function numberToWord(number) {
         return 'Number out of range';
     }
 }
-alert(tithi);
+// alert(sakaDay);
+
 // let x = tithi;
-const inputNumber = tithi-1; 
-const purnima = day-1;
+const inputNumber = tithi;
+const purnima = day - 1;
     if (purnima === 30) {
             document.getElementById("demo").innerHTML = "ପୂର୍ଣ୍ଣିମା ତିଥି";
     }
@@ -261,12 +247,8 @@ const purnima = day-1;
     }
 
 
-
-
-
     // Update the Saka Date in the header
     document.getElementById("saka-calendar-date").textContent = `${sakaYear} ଶତାବ୍ଦ, ${getSakaMonthName(sakaMonthl)} ମାସ, ${sakaDay} ଦିନ, ${paksha}`;
-
     for (let i = 0; i < firstDayOfWeek; i++) {
         const emptyCell = document.createElement('div');
         calendarDates.appendChild(emptyCell);
