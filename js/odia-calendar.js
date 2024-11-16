@@ -8,7 +8,7 @@ function gregorianToSaka(date) {
     // Approximation of Saka year and month
     const sakaYear = 1946 + Math.floor(diffDays / 365); // Calculate Saka Year based on the days difference
     const sakaMonth = Math.floor((diffDays % 365) / 30);  // Approximate month (30 days per month)
-    const sakaDay = (diffDays % 365) % 30;  // Calculate the day within the month
+    const sakaDay = (diffDays % 365) % 30 === 0 ? 30 : (diffDays % 365) % 30;  // Calculate the day within the month
 
     return { sakaYear, sakaMonth, sakaDay };
 }
@@ -133,7 +133,7 @@ function populateMonthYear() {
         selectMonth.appendChild(option);
     });
 
-    for (let year = 2024; year <= 2026; year++) {
+    for (let year = 2024; year <= 2025; year++) {
         const option = document.createElement('option');
         option.value = year;
         option.textContent = year;
@@ -190,7 +190,7 @@ function generateDates() {
     // Calculate the Saka date for today
     const { sakaYear, sakaMonth, sakaDay } = gregorianToSaka(today);
     const paksha = getPaksha(sakaDay + 1);
-    const tithi = getTithi(sakaDay + 1); // Calculate Tithi (lunar day)
+    const tithi = getTithi(sakaDay); // Calculate Tithi (lunar day)
 
 // Function to calculate the Paksha (Shukla or Krishna)
 function getPaksha(day) {
@@ -228,7 +228,10 @@ const numbersInWords = [
 function numberToWord(number) {
     // Check if the number is within the valid range (1 to 9)
     if (number >= 1 && number <= 15) {
-        return numbersInWords[number-1];  // Adjust index for 0-based array
+        if (tithi === 1) {
+            return numbersInWords[number - 1];
+        }
+        return numbersInWords[number - 2];  // Adjust index for 0-based array
     } else {
         return 'Number out of range';
     }
