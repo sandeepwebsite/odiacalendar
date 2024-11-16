@@ -192,6 +192,14 @@ function generateDates() {
     const paksha = getPaksha(sakaDay + 1);
     const tithi = getTithi(sakaDay); // Calculate Tithi (lunar day)
 
+    // on 30days of month sakamonth will -1
+    if (sakaDay === 30) {
+        sakaMonthl = sakaMonth - 1;
+    } else {
+        sakaMonthl = sakaMonth;
+    }
+
+
 // Function to calculate the Paksha (Shukla or Krishna)
 function getPaksha(day) {
     if (day <= 15) {
@@ -257,7 +265,7 @@ const purnima = day-1;
 
 
     // Update the Saka Date in the header
-    document.getElementById("saka-calendar-date").textContent = `${sakaYear} ଶତାବ୍ଦ, ${getSakaMonthName(sakaMonth)} ମାସ, ${sakaDay} ଦିନ ,${paksha}`;
+    document.getElementById("saka-calendar-date").textContent = `${sakaYear} ଶତାବ୍ଦ, ${getSakaMonthName(sakaMonthl)} ମାସ, ${sakaDay} ଦିନ ,${paksha}`;
 
     for (let i = 0; i < firstDayOfWeek; i++) {
         const emptyCell = document.createElement('div');
