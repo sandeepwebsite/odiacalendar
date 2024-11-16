@@ -244,7 +244,7 @@ function numberToWord(number) {
         return 'Number out of range';
     }
 }
-
+alert(tithi);
 // let x = tithi;
 const inputNumber = tithi-1; 
 const purnima = day-1;
@@ -265,7 +265,7 @@ const purnima = day-1;
 
 
     // Update the Saka Date in the header
-    document.getElementById("saka-calendar-date").textContent = `${sakaYear} ଶତାବ୍ଦ, ${getSakaMonthName(sakaMonthl)} ମାସ, ${sakaDay} ଦିନ ,${paksha}`;
+    document.getElementById("saka-calendar-date").textContent = `${sakaYear} ଶତାବ୍ଦ, ${getSakaMonthName(sakaMonthl)} ମାସ, ${sakaDay} ଦିନ, ${paksha}`;
 
     for (let i = 0; i < firstDayOfWeek; i++) {
         const emptyCell = document.createElement('div');
