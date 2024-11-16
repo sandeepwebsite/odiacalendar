@@ -147,6 +147,11 @@ body {
     width: 75%;
     filter: drop-shadow(2px 2px 2px black)
 }
+.row-2 .social{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .row-2 .social img{
     width: 20%;
 }
