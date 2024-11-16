@@ -40,6 +40,10 @@ header #fullcalendardate{
 }
 .date-info{
     text-align: center;
+    font-size: 1.1rem;
+}
+.date-info{
+    text-align: center;
 }
 #calendar_dates {
     display: grid;
