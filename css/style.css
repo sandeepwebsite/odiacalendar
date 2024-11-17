@@ -155,6 +155,10 @@ body {
 .row-2 .social img{
     width: 80%;
 }
+footer{
+    padding: 5px;
+    text-align: center;
+}
 @media only screen and (orientation: landscape){
     .container{
         width: 50%;
