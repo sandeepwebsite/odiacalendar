@@ -21,6 +21,32 @@ body {
     flex-direction: column;
     gap: 1rem;
 }
+.search-container{
+    position: relative;
+}
+.search-container input{
+    padding: 5px;
+    height: 30px;
+    padding-left: 30px;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 12px;
+}
+.search-container .fa{
+    position: absolute;
+    left: 8px;
+    top: 6.5px;
+}
+#autocompleteList{
+    
+    padding: 5px;
+    overflow-y: auto;
+    position: absolute;
+    width: 100%;
+    background-color: cornsilk;
+    z-index: 1000;
+}
 .header{
     display: flex;
     align-items: center;
@@ -66,13 +92,6 @@ body {
 .card h1{
     font-size: 45px;
 }
-.card a{
-    background-color: #64A1A5;
-    text-decoration: none;
-    padding: 3px;
-    border-radius: 6px;
-    color: black;
-}
 .card p{
     background-color: black;
     width: 100%;
@@ -81,16 +100,16 @@ body {
 }
 .card-1{
     flex: 1;
+    cursor: pointer;
     background-color: tomato;
-    height: 12rem;
     text-align: center;
     border-bottom-right-radius: 12px;
     border-bottom-left-radius: 12px;
 }
 .card-2{
     flex: 1;
+    cursor: pointer;
     background-color: #F46B63;
-    height: 12rem;
     text-align: center;
     border-bottom-right-radius: 12px;
     border-bottom-left-radius: 12px;
