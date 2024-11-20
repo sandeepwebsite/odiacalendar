@@ -3,68 +3,77 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Cache-Control" content="max-age=31536000, public">
-    <meta http-equiv="Expires" content="Thu, 31 Dec 2099 23:59:59 GMT"> 
 	<title>Odisha Calendar</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
 <div class="container">
 	<div class="header">
-        <img src="image/jagannath.png?v=1.0.0">
+        <img src="image/jagannath.png">
         <h2>Odia Calendar</h2>
     </div>
     <div class="main">
+        <div class="search-container">
+            <i class="fa fa-search" aria-hidden="true"></i>
+        <input type="text" id="searchInput" placeholder="Search holiday by date (e.g., 14) or month (e.g., January)" oninput="showAutocomplete(this.value)">
+
+        <!-- <button onclick="searchHoliday()">Search</button> -->
+        <div id="autocompleteList"></div>
+            <div id="results" class="results"></div>
+    </div>
         <div class="heading">
-            <img src="image/calendar-banner.jpg?v=1.0.0">
-		<br>
+            <img src="image/calendar-banner.jpg">
         </div>
         <div class="card">
-            <div class="card-1">
+            <div class="card-1" onclick="location.href='odia-calendar.html';">
             	<p id="odiaDate"></p>
-            	<h1>ଅ</h1>
-            	<h4>Odia Calendar</h4>
-            	<a href="odia-calendar.html">Visit Now <span>>></span></a>
+                <div>
+                    <h1>ଅ</h1>
+                    <h4>Odia Calendar</h4>
+                </div>
             </div>
-            <div class="card-2">
+            <div class="card-2" onclick="location.href='holiday-calendar.html';">
             	<p id="englishDate"></p>
-            	<h1>A</h1>
-            	<h4>Holiday Calendar</h4>
-            	<a href="holiday-calendar.html">Visit Now <span>>></span></a>
+                <div>
+                    <h1>A</h1>
+                    <h4>Holiday Calendar</h4>
+                </div>
             </div>
         </div>
         <div class="contact">
             <div class="row-1">
                 <h4>More Projects</h4>
                 <li class="col">
-                    <a href="https://sandeepwebsite.github.io/odia-dictionary-app/">Odia to English Dictionary</a>
+                    <a href="odia-dictionary">ଅ  A Dictionary</a>
                 </li>
                 <li class="col">
-                    <a href="https://sandeepwebsite.github.io/odia-dictionary-app/">English to Odia Dictionary</a>
+                    <a href="odia-dictionary">A ଅ Dictionary</a>
                 </li>
                 <li class="col">
-                    <a href="https://dearaspirants.rf.gd/">Math Practice</a>
+                    <a href="odia-dictionary">Math Practice</a>
                 </li>
                 <li class="col">
-                    <a href="https://dearaspirants.rf.gd/PDF_Compressor/">PDF Compressor</a>
+                    <a href="odia-dictionary">PDF Compressor</a>
                 </li>
             </div>
             <div class="row-2">
-                <img src="image/sandeep3.png?v=1.0.0">
+                <img src="image/sandeep3.png">
                 <h4>Follow Me On:</h4>
                 <div class="social">
-                    <a href="https://www.instagram.com/sandeep_kumar_mohanta/"><img src="image/insta.png?v=1.0.0"></a>
+                    <a href=""><img src="image/insta.png"></a>
                     <!-- <a href=""><img src="image/telegram.png"></a> -->
-                    <a href="https://www.facebook.com/sondip.asdeepu"><img src="image/facebook.png?v=1.0.0"></a>
-                    <a href="https://wa.me/919668491970?text=Hello%20Sandeep..!"><img src="image/whatsapp.png?v=1.0.0"></a>
-                    <a href="https://github.com/sandeepwebsite/"><img src="image/github.png?v=1.0.0"></a>
+                    <a href=""><img src="image/facebook.png"></a>
+                    <a href=""><img src="image/whatsapp.png"></a>
+                    <a href=""><img src="image/github.png"></a>
                 </div>
             </div>
         </div>
     </div>
     <footer>Made With 🤍</footer>
 </div>
-
+	
 
 	<script>
     // Function to get current date
@@ -104,20 +113,83 @@
     
     // Call the function to set the dates on load
     getCurrentDate();
-
-
-    if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('js/service-worker.js')
-        .then(registration => {
-            console.log('Service Worker registered with scope:', registration.scope);
-        })
-        .catch(error => {
-            console.log('Service Worker registration failed:', error);
-        });
-    });
-}
-
 </script>
+
+
+<script>
+        const holidays2025 = {
+            0: {14: "Makar Sankranti", 23: "Subash Chandra Bose Jayanti / Vir Surendrasai Jayanti", 26: "Republic Day"},
+            1: {2: "Basanta Panchami", 26: "Maha Shivaratri"},
+            2: {5: "Panchayati Raj Divas", 14: "Dola Purnima", 15: "Holi", 31: "Id-ul-Fitre"},
+            3: {1: "Utkal Divas", 3: "Sri Ram Navami", 14: "Maha Vishuva Sankranti/ Dr. B.R. Ambedkar Jayanti", 18: "Good Friday"},
+            4: {12: "Buddha Purnima/ Birthday of Pt. Raghunath Murmu", 27: "Sabitri Amabasya"},
+            5: {7: "Id-ul-Zuha", 14: "Pahili Raja (2nd Saturday)", 15: "Raja Sankranti", 27: "Ratha Yatra"},
+            6: {5: "Bahuda Yatra(Optional Holiday)", 6: "Muharram"},
+            7: {9: "Jhulana Purnima (2nd Saturday)", 15: "Independence Day/ Janmastami", 27: "Ganesh Puja", 28: "Nuakhai"},
+            8: {5: "Birthday of Prophet Muhammad", 21: "Mahalaya", 29: "Mahasaptami", 30: "Mahastami"},
+            9: {1: "Mahanavami", 2: "Vijaya Dasami/ Gandhi Jayanti", 7: "Kumar Purnima", 21: "Diwali"},
+            10: {5: "Rahas Purnima", 12: "Prathamastami(Optional Holiday)"},
+            11: {25: "X-Mas Day"}
+        };
+
+                function monthToName(month) {
+            const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            return monthNames[month];
+        }
+
+        function showAutocomplete() {
+            const input = document.getElementById('searchInput').value.trim().toLowerCase();
+            const autocompleteList = document.getElementById('autocompleteList');
+            autocompleteList.innerHTML = '';
+
+            if (input === '') {
+                return;
+            }
+
+            let matches = [];
+            for (let month in holidays2025) {
+                const monthName = monthToName(parseInt(month));
+                for (let date in holidays2025[month]) {
+                    const holiday = holidays2025[month][date];
+                    if (date.toString().includes(input) || monthName.toLowerCase().includes(input) || holiday.toLowerCase().includes(input)) {
+                        matches.push(`${monthName} ${date}: ${holiday}`);
+                    }
+                }
+            }
+
+            matches.forEach(match => {
+                const item = document.createElement('div');
+                item.className = 'autocomplete-item';
+                item.textContent = match;
+                item.onclick = function() {
+                    document.getElementById('searchInput').value = match;
+                    autocompleteList.innerHTML = '';
+                    document.getElementById('results').innerHTML = `<p><strong>${match}</strong></p>`;
+                };
+                autocompleteList.appendChild(item);
+            });
+        }
+
+        function searchHoliday() {
+            const input = document.getElementById('searchInput').value.trim().toLowerCase();
+            let results = '';
+
+            for (let month in holidays2025) {
+                const monthName = monthToName(parseInt(month));
+                for (let date in holidays2025[month]) {
+                    const holiday = holidays2025[month][date];
+                    if (date.toString() === input || monthName.toLowerCase().includes(input) || holiday.toLowerCase().includes(input)) {
+                        results += `<p><strong>${monthName} ${date}</strong>: ${holiday}</p>`;
+                    }
+                }
+            }
+
+            if (results === '') {
+                results = '<p>No holidays found for your search.</p>';
+            }
+
+            document.getElementById('results').innerHTML = results;
+        }
+    </script>
 </body>
 </html>
