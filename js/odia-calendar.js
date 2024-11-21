@@ -201,21 +201,21 @@ function getTithi(day) {
 // const numbersInWords = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
 
 const numbersInWords = [
-    "ପ୍ରଥମ",    // First
-    "ଦ୍ୱିତୀୟ",   // Second
-    "ତୃତୀୟ",    // Third
-    "ଚତୁର୍ଥ",   // Fourth
-    "ପଞ୍ଚମ",    // Fifth
-    "ଷଷ୍ଠ",     // Sixth
-    "ସପ୍ତମ",    // Seventh
-    "ଅଷ୍ଟମ",    // Eighth
-    "ନବମ",      // Ninth
-    "ଦଶମ",      // Tenth
+    "ପ୍ରଥମି",    // First
+    "ଦ୍ଵିତୀୟା",   // Second
+    "ତୃତୀୟା",    // Third
+    "ଚତୁର୍ଥୀ",   // Fourth
+    "ପଞ୍ଚମୀ",    // Fifth
+    "ଷଷ୍ଠୀ",     // Sixth
+    "ସପ୍ତମୀ",    // Seventh
+    "ଅଷ୍ଟମୀ",    // Eighth
+    "ନବମୀ",      // Ninth
+    "ଦଶମୀ",      // Tenth
     "ଏକାଦଶୀ",   // Eleventh
-    "ଦ୍ୱାଦଶ",   // Twelfth
-    "ତ୍ରୟୋଦଶ", // Thirteenth
-    "ଚତୁର୍ଦ୍ଦଶ", // Fourteenth
-    "pandara"
+    "ଦ୍ୱାଦଶୀ",   // Twelfth
+    "ତ୍ରୟୋଦଶୀ", // Thirteenth
+    "ଚତୁର୍ଦୋଶୀ", // Fourteenth
+    "ପାଞ୍ଚଦଶୀ"
 ];
 
 function numberToWord(number) {
@@ -264,7 +264,7 @@ const odiaDigits = '୦୧୨୩୪୫୬୭୮୯';
     }
 
 // Update the Saka Date in the header
-document.getElementById("saka-calendar-date").textContent = `${translateNumberToOdia(OdiaSakaYear)} ଶତାବ୍ଦ, ${getSakaMonthName(sakaMonthl)} ମାସ, ${translateNumberToOdia(OdiaSakaDay)} ଦିନ, ${paksha}`;
+document.getElementById("saka-calendar-date").textContent = `${translateNumberToOdia(OdiaSakaYear)}ଶତାବ୍ଦ,${getSakaMonthName(sakaMonthl)} ମାସ,${translateNumberToOdia(OdiaSakaDay)} ଦିନ, ${paksha}`;
 
     for (let i = 0; i < firstDayOfWeek; i++) {
         const emptyCell = document.createElement('div');
