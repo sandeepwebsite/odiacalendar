@@ -188,9 +188,9 @@ function generateDates() {
 // Function to calculate the Paksha (Shukla or Krishna)
 function getPaksha(day) {
     if (day <= 15) {
-        return 'କୃଷ୍ଣ ପକ୍ଷ,'; // Waxing phase
+        return 'କୃଷ୍ଣପକ୍ଷ,'; // Waxing phase
     } else {
-        return 'ଶୁକ୍ଳ ପକ୍ଷ,'; // Waning phase
+        return 'ଶୁକ୍ଳପକ୍ଷ,'; // Waning phase
     }
 }
 
@@ -264,7 +264,7 @@ const odiaDigits = '୦୧୨୩୪୫୬୭୮୯';
     }
 
 // Update the Saka Date in the header
-document.getElementById("saka-calendar-date").textContent = `${translateNumberToOdia(OdiaSakaYear)}ଶତାବ୍ଦ,${getSakaMonthName(sakaMonthl)} ମାସ,${translateNumberToOdia(OdiaSakaDay)} ଦିନ, ${paksha}`;
+document.getElementById("saka-calendar-date").textContent = `${translateNumberToOdia(OdiaSakaYear)} ଶତାବ୍ଦ,${getSakaMonthName(sakaMonthl)} ମାସ,${translateNumberToOdia(OdiaSakaDay)} ଦିନ, ${paksha}`;
 
     for (let i = 0; i < firstDayOfWeek; i++) {
         const emptyCell = document.createElement('div');
