@@ -120,7 +120,7 @@ body {
 .card-1{
     flex: 1;
     cursor: pointer;
-    background-color: tomato;
+    background-color: #bb91dd;
     text-align: center;
     border-bottom-right-radius: 12px;
     border-bottom-left-radius: 12px;
@@ -128,7 +128,7 @@ body {
 .card-2{
     flex: 1;
     cursor: pointer;
-    background-color: #F46B63;
+    background-color: #97c93c;
     text-align: center;
     border-bottom-right-radius: 12px;
     border-bottom-left-radius: 12px;
