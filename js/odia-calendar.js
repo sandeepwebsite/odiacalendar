@@ -89,7 +89,23 @@ const monthEvents = {
         }
     },
     2025: {
-        0: { 15: { en: "Makar Sankranti/Pongal", or: "ମକର ସଂକ୍ରାନ୍ତି/ପୋଙ୍ଗାଲ୍" }, 26: { en: "Republic Day", or: "ଗଣତନ୍ତ୍ର ଦିବସ" }},
+        0: {
+            1: { en: "New Year 2025, ditiyara chandra darsana, sarana arambha", or: "ଇଂରାଜୀ ନୂତନ ବର୍ଷ ସନ 2025 ମସିହା ପ୍ରବେଶ ଆରମ୍ଭ, ଦ୍ୱିତୀୟର ଚନ୍ଦ୍ର ଦର୍ଶନ, ଶରଣ ଆରମ୍ଭ"},
+            5: { en: "sarana sesa", or: "ଶରଣ ଶେଷ"},
+            9: { en: "shaambadasami o sudashaa brata", or: "ଶାମ୍ବଦଶମୀ ଓ ସୁଦଶା ବ୍ରତ"},
+            10: { en: "putrada ekaadasi upabasa o hala nisedha", or: "ପୁତ୍ରଦା ଏକାଦଶୀ ଉପବାସ ଓ ହଳନିଷେଧ"},
+            12: { en: "swami bibekananda jayantee, sibachaturdasi upabasa o bedhaa parikramaa", or: "ସ୍ୱାମୀ ବିବେକାନନ୍ଦ ଜୟନ୍ତୀ, ଶିବଚତୁର୍ଦଶୀ ଉପବାସ ଓ ବେଢ଼ା ପରିକ୍ରମା"},
+            13: { en: "pousa purnimaa, chandra puja, mahodadhi arati, nabanka bedhaa, masaanta", or: "ପୌଷ ପୂର୍ଣ୍ଣିମା, ଚନ୍ଦ୍ର ପୂଜା, ମହୋଦଧି ଆରତୀ, ନବଙ୍କ ବେଢ଼ା, ମାସାନ୍ତ"},
+            14: { en: "uttarayana makara sankranti, pongala, maghabratarambha o hala nisedha", or: "ଉତ୍ତରାୟଣ ମକର ସଂକ୍ରାନ୍ତି, ପୋଙ୍ଗଲ, ମାଘବ୍ରତାରମ୍ଭ ଓ ହଳନିଷେଧ"},
+            15: { en: "pusya bhiseka o rajaa bhiseka", or: "ପୁଷ୍ୟା ଭିଷେକ ଓ ରାଜା ଭିଷେକ"},
+            23: { en: "netaji subaasa chandra bosanka jayantee", or: "ନେତାଜୀ ସୁବାଷ ଚନ୍ଦ୍ର ବୋଷଙ୍କ ଜୟନ୍ତୀ"},
+            25: { en: "sat tila ekaadasi upabasa, olasunni mela, hala nisedha", or: "ଷଟ୍ ତିଳା ଏକାଦଶୀ ଉପବାସ, ଓଳାଶୁଣୀ ମେଳା, ହଳନିଷେଧ"},
+            26: { en: "Republic Day", or: "ସାଧାରଣତନ୍ତ୍ର ଦିବସ"},
+            27: { en: "ratantee kalika puja", or: "ରଟନ୍ତୀ କାଳୀକ ପୂଜା"},
+            28: { en: "siba chaturdasi upabasa o bedhaa parikramaa, ratantee chaturdasi, chandra kshya, nishipalana, sarana arambha, sabe-merage (purbaratri)", or: "ଶିବ ଚତୁର୍ଦଶୀ ଉପବାସ ଓ ବେଢ଼ା ପରିକ୍ରମା, ରଟନ୍ତୀ ଚତୁର୍ଦଶୀ, ଚନ୍ଦ୍ର କ୍ଷୟ, ନିଶିପାଳନ, ଶରଣ ଆରମ୍ଭ, ସବେ-ମେରେଜ (ପୂର୍ବରାତ୍ରି)"},
+            29: { en: "tribeni amaabasya, maa biraja debinkara janmobaschaba, hallanisedha", or: "ତ୍ରିବେଣୀ ଅମାବାସ୍ୟା, ମା ବିରଜା ଦେବୀଙ୍କର ଜନ୍ମୋବତ୍ସବ, ହଳନିଷେଧ"},
+            30: { en: "ditiyaara chandra darsana puja o upabasa, mahatmagandhinka tirodhana dibasa", or: "ଦ୍ୱିତୀୟାର ଚନ୍ଦ୍ର ଦର୍ଶନ ପୂଜା ଓ ଉପବାସ, ମହାତ୍ମାଗାନ୍ଧୀଙ୍କ ତିରୋଧାନ ଦିବସ"}
+        },
         2: { 8: { en: "Maha Shivaratri", or: "ମହା ଶିବରାତ୍ରି" }, 20: { en: "Holi Festival", or: "ହୋଲି ପର୍ବ" }},
         3: { 22: { en: "Earth Day", or: "ପୃଥିବୀ ଦିବସ" }},
         4: { 1: { en: "Labor Day", or: "ଶ୍ରମିକ ଦିବସ" }},
