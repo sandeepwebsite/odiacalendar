@@ -38,14 +38,27 @@ body {
     left: 8px;
     top: 6.5px;
 }
-#autocompleteList{
-    
+#autocompleteList{  
     padding: 5px;
     overflow-y: auto;
+    max-height: 80vh;
     position: absolute;
     width: 100%;
     background-color: cornsilk;
-    z-index: 1000;
+    z-index: 1;
+}
+.autocomplete-item {
+    padding: 10px;
+    cursor: pointer;
+    margin: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.autocomplete-item:hover {
+    background-color: #f0f0f0;
+}
+.results {
+    margin-top: 20px;
+    background-color: cornsilk;
 }
 .header{
     display: flex;
@@ -89,8 +102,14 @@ body {
     margin: auto;
     gap: 1rem;
 }
-.card h1{
-    font-size: 45px;
+
+.card img{
+    width: 50%;
+}
+.card h4{
+    text-align: center;
+    color: black;
+    font-weight: bold;
 }
 .card p{
     background-color: black;
