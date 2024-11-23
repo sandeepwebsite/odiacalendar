@@ -66,7 +66,27 @@ const monthEvents = {
             // 20: { en: "Special Event 1", or: "ବିଶେଷ ଘଟଣା 1" },
             // 22: { en: "Special Event 2", or: "ବିଶେଷ ଘଟଣା 2" }
         },
-        11: { 25: { en: "Christmas", or: "ବଡ଼ଦିନ" }, 31: { en: "New Year's Eve", or: "ନୂତନ ବର୍ଷ ପୂର୍ବସନ୍ଧ୍ୟା" }}
+        11: { 
+            1: {en: "mahodadhi amaabasya, madhya debadipaabali o surjyamahati snaana", or: "ମହୋଦଧି ଅମାବାସ୍ୟା, ମଧ୍ୟ ଦେବଦୀପାବଳୀ ଓ ସୂର୍ଯ୍ୟମହତୀ ସ୍ନାନ"},
+            2: {en: "debadipaabali samaapti o chandradarsana", or: "ଦେବଦୀପାବଳୀ ସମାପ୍ତି ଓ ଚନ୍ଦ୍ରଦର୍ଶନ"},
+            4: {en: "rambha trutiyaa", or: "ରମ୍ଭା ତୃତୀୟା"},
+            5: {en: "maannabasaa gurubara osa o sarana arambha", or: "ମାଣବସା ଗୁରୁବାର ଓଷା ଓ ଶରଣ ଆରମ୍ଭ"},
+            6: {en: "kuraalla panchami", or: "କୁରାଳ ପଞ୍ଚମୀ"},
+            7: {en: "odhanna o prabarana sasthi", or: "ଓଢ଼ଣ ଓ ପ୍ରାବରଣ ଷଷ୍ଠୀ"},
+            9: {en: "sarana sesa", or: "ଶରଣ ଶେଷ"},
+            11: {en: "mokshada ekaadasi o halla nisedha ", or: "ମୋକ୍ଷଦା ଏକାଦଶୀ ଓ ହଳ ନିଷେଧ"},
+            12: {en: "byanjana dwadasi", or: "ବ୍ୟଞ୍ଜନ ଦ୍ୱାଦଶୀ"},
+            13: {en: "anang trayodasi o gita jayantee", or: "ଅନଙ୍ଗ ତ୍ରୟୋଦଶୀ ଓ ଗୀତ ଜୟନ୍ତୀ"},
+            14: {en: "pandu osa, chandrapuja o sibachaturdasi upabasa", or: "ପଣ୍ଡୁ ଓଷା, ଚନ୍ଦ୍ରପୂଜା ଓ ଶିବଚତୁର୍ଦଶୀ ଉପବାସ"},
+            15: {en: "purnimaa", or: "ପୂର୍ଣ୍ଣିମା"},
+            16: {en: "dhanu sankranti, pahili bhoga o halla nisedha", or: "ଧନୁ ସଂକ୍ରାନ୍ତି, ପହିଲି ଭୋଗ ଓ ହଳ ନିଷେଧ"},
+            17: {en: "dand pahanraa o bata osa", or: "ଦଣ୍ଡ ପହଁରା ଓ ବାଟ ଓଷା"},
+            23: {en: "pathani samantanka jayantee", or: "ପଠାଣି ସାମନ୍ତଙ୍କ ଜୟନ୍ତୀ"},
+            25: {en: "jisu khristanka janma (bada dina)", or: "ଯୀଶୁ ଖ୍ରୀଷ୍ଟଙ୍କ ଜନ୍ମ (ବଡ଼ ଦିନ)"},
+            26: {en: "safala ekaadasi o halla nisedha", or: "ସଫଳ ଏକାଦଶୀ ଓ ହଳ ନିଷେଧ"},
+            29: {en: "sibachaturdasi o upabasa", or: "ଶିବଚତୁର୍ଦଶୀ ଓ ଉପବାସ"},
+            30: {en: "bakula amaabasya, srimandire o gruhinna bakula lagi, somamahati snaana o chandrakshya", or: "ବକୁଳ ଅମାବାସ୍ୟା, ଶ୍ରୀମନ୍ଦିରେ ଓ ଗୃହିଣ ବକୁଳ ଲାଗି, ସୋମମହତି ସ୍ନାନ ଓ ଚନ୍ଦ୍ରକ୍ଷୟ"}
+        }
     },
     2025: {
         0: { 15: { en: "Makar Sankranti/Pongal", or: "ମକର ସଂକ୍ରାନ୍ତି/ପୋଙ୍ଗାଲ୍" }, 26: { en: "Republic Day", or: "ଗଣତନ୍ତ୍ର ଦିବସ" }},
