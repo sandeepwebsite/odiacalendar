@@ -163,7 +163,11 @@
             autocompleteList.innerHTML = '';
 
             if (input === '') {
+                document.getElementById('autocompleteList').style.display = "none";
                 return;
+            }
+            else{
+                document.getElementById('autocompleteList').style.display = "block";
             }
 
             let matches = [];
@@ -185,6 +189,7 @@
                     document.getElementById('searchInput').value = match;
                     autocompleteList.innerHTML = '';
                     document.getElementById('results').innerHTML = `<p><strong>${match}</strong></p>`;
+                    document.getElementById('autocompleteList').style.display = "none";
                 };
                 autocompleteList.appendChild(item);
             });
