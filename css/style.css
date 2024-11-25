@@ -27,7 +27,7 @@ body {
 }
 .search-container input{
     padding: 5px;
-    height: 30px;
+    height: 40px;
     padding-left: 30px;
     width: 100%;
     border: none;
@@ -36,8 +36,8 @@ body {
 }
 .search-container .fa{
     position: absolute;
-    left: 8px;
-    top: 6.5px;
+    left: 10px;
+    top: 12px;
 }
 #autocompleteList{  
     padding: 5px;
@@ -61,6 +61,7 @@ body {
 .results {
     margin-top: 20px;
     background-color: cornsilk;
+    display: none;
 }
 .header{
     display: flex;
