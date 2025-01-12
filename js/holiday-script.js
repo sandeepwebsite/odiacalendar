@@ -320,8 +320,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 dateElement.classList.add('today');
             }
 
-                // Apply lightblue background for Durgapuja, dates from 8th to 17th November on the 'school' tab
-            if (currentTab === 'school' && month === 9 && day >= 8 && day <= 17) {
+                    // Apply lightblue background for Durgapuja, dates from 8th to 17th November on the 'school' tab
+            if (currentTab === 'school' && month === 8 && day >= 29 ||  month === 9 && day <= 7) {
                 dateElement.classList.add('highlight-red'); // Add this custom class
             }
             // Apply lightblue background for X-Mass/Winter Vacation, dates from 8th to 17th November on the 'school' tab
@@ -329,14 +329,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 dateElement.classList.add('highlight-red'); // Add this custom class
             }
             // Apply lightblue background for Summer Vacation, dates from 8th to 17th November on the 'school' tab
-            if (currentTab === 'school' && month === 4 && day >= 25 && day <= 31) {
+            if (currentTab === 'school' && month === 4 && day >= 6 ||  month === 5 && day <= 19 && day <= 31) {
                 dateElement.classList.add('highlight-red'); // Add this custom class
             }
-            // Apply lightblue background for Summer Vacation, dates from 8th to 17th November on the 'school' tab
-            if (currentTab === 'school' && month === 5 && day >= 1 && day <= 17) {
-                dateElement.classList.add('highlight-red'); // Add this custom class
-            }
-
             if (holidayData[currentTab][year] && holidayData[currentTab][year][month]?.[day]) {
                 dateElement.classList.add('active');
                 dateElement.title = holidayData[currentTab][year][month][day];
