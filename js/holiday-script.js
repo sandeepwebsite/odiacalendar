@@ -41,6 +41,72 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         },
         school: {
+            2025: {
+                0: { 1: "New Year", 9: "Sambadasami", 14: "Makar Sankranti", 23: "Subash Chandra Bose Jayanti / Vir Surendra Sai Jayanti", 26: "Republic Day" },
+  
+                1: {
+                    14: "Basanta Panchami",
+                    26: "Maha Shivaratri"
+                },
+  
+                2: {
+                    5: "Panchayati Raj Divas",
+                    14: "Dola Purnima",
+                    15: "Holi",
+                    31: "Id-Ul-Fitre",
+                },
+  
+                3: {
+                    1: "Utkal Divas",
+                    14: "Maha Vishuva Sankranti/Dr. B.R Ambedkar Jayanti",
+                    18: "Good Friday"
+                  },
+  
+                4: {
+                    6: "Summer Vacation Start"
+                  },
+  
+                5: {
+                    19: "Summer Vacation End",
+                    27: "Ratha Yatra"
+                  },
+  
+                6: {
+                    5: "Bahuda Yatra"
+                  },
+  
+                7: {
+                    9: "Jhulana Purnima(Rakshya Bandhan)",
+                    15: "Independence Day/Janmasami",
+                    27: "Ganesh Puja",
+                    28: "Nua Khai"
+                  },
+  
+                8: {
+                    5: "Guru Divas/Birthday of Prophet Muhammad",
+                    29: "Puja Vacation start"
+                  },
+  
+                9: {
+                    7: "Puja Vacation End",
+                    21: "Diwali / Kalipuja"
+                  },
+  
+                10: {
+                    4: "Badaosha",
+                    5: "Rahas Purnima",
+                    12: "Prathamastami",
+                    14: "Sishu Divas"
+                  },
+                  
+                11: {
+                    4: "Sesa Manabasa Gurubara",
+                    24: "X-Mas HoliDay Start",
+                    31: "X-Mas HoliDay End"
+                  }
+            }
+        },
+        state: {
             2024: {
                 0: { 15: "Makar Sankranti", 23: "Subash Chandra Bose Jayanti / Vir Surendra Sai Jayanti", 26: "Republic Day" },
   
@@ -91,11 +157,9 @@ document.addEventListener("DOMContentLoaded", function() {
   
                 9: {
                     2: "Gandhi Jayanti / Mohalaya",
-                    8: "Dussahera Holiday Start",
                     10: "Mahasaptami",
                     11: "Mahastami",
                     16: "Kumar Purnima",
-                    17: "Dussahera Holiday End",
                     31: "Diwali / Kalipuja"
                   },
   
@@ -106,22 +170,8 @@ document.addEventListener("DOMContentLoaded", function() {
                   
                 11: {
                     25: "X-Mas Day",
-                    24: "Christmas Eve (Winter Vacation Starts 24th Dec to 2nd Jan)"
+                    24: "Christmas Eve (Optional Holiday)"
                   }
-            },
-            2025: {
-                0: {14: "Makar Sankranti", 23: "Subash Chandra Bose Jayanti / Vir Surendrasai Jayanti"},
-                1: {26: "Maha Shivaratri"},
-                2: {5: "Panchayati Raj Divas", 14: "Dola Purnima", 15: "Holi", 31: "Id-ul-Fitre"},
-                3: {1: "Utkal Divas", 14: "Maha Vishuva Sankranti/ Dr. B.R. Ambedkar Jayanti", 18: "Good Friday"},
-                4: {12: "Buddha Purnima/ Birthday of Pt. Raghunath Murmu", 27: "Sabitri Amabasya"},
-                5: {7: "Id-ul-Zuha", 27: "Ratha Yatra"},
-                7: {15: "Independence Day/ Janmastami", 27: "Ganesh Puja", 28: "Nuakhai"},
-                8: {5: "Birthday of Prophet Muhammad", 29: "Mahasaptami", 30: "Mahastami"},
-                9: {1: "Mahanavami", 2: "Vijaya Dasami/ Gandhi Jayanti", 7: "Kumar Purnima", 21: "Diwali"},
-                10: {5: "Rahas Purnima"},
-                11: {25: "X-Mas Day"}
-            }      
         },
         state: {
             2024: {
