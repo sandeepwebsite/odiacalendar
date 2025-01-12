@@ -172,88 +172,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     25: "X-Mas Day",
                     24: "Christmas Eve (Optional Holiday)"
                   }
-        },
-        state: {
-            2024: {
-                0: { 15: "Makar Sankranti", 23: "Subash Chandra Bose Jayanti / Vir Surendra Sai Jayanti", 26: "Republic Day" },
-  
-                1: {
-                    14: "Basanta Panchami"
-                },
-  
-                2: {
-                    5: "Panchayati Raj Divas",
-                    8: "Maha Shivaratri",
-                    25: "Dola Purnima",
-                    26: "Holi",
-                    29: "Good Friday",
-                },
-  
-                3: {
-                    1: "Utkal Divas",
-                    11: "Id-ul-Fitre",
-                    17: "Ram Navami"
-                  },
-  
-                4: {
-                    23: "Budha Purnima / Birthday of Pandit Raghunath Murmu"
-                  },
-  
-                5: {
-                    6: "Sabitri Amabasya",
-                    14: "Pahili Raja",
-                    15: "Raja Sankranti",
-                    17: "ID-ul-Zuha"
-                  },
-  
-                6: {
-                    17: "Muharram",
-                    15: "Bahuda Yatra (Optional Holiday)"
-                  },
-  
-                7: {
-                    15: "Independence Day",
-                    19: "Jhulana Purnima",
-                    26: "Janmastami"
-                  },
-  
-                8: {
-                    7: "Ganesh Puja",
-                    16: "Birthday of Prophet Muhammad"
-                  },
-  
-                9: {
-                    2: "Gandhi Jayanti / Mohalaya",
-                    10: "Mahasaptami",
-                    11: "Mahastami",
-                    16: "Kumar Purnima",
-                    31: "Diwali / Kalipuja"
-                  },
-  
-                10: {
-                    15: "Rahas Purnima",
-                    23: "Prathamastami (4th Saturday)"
-                  },
-                  
-                11: {
-                    25: "X-Mas Day",
-                    24: "Christmas Eve (Optional Holiday)"
-                  }
-            },
-            2025: {
-                0: {14: "Makar Sankranti", 23: "Subash Chandra Bose Jayanti / Vir Surendrasai Jayanti", 26: "Republic Day"},
-                1: {2: "Basanta Panchami", 26: "Maha Shivaratri"},
-                2: {5: "Panchayati Raj Divas", 14: "Dola Purnima", 15: "Holi", 31: "Id-ul-Fitre"},
-                3: {1: "Utkal Divas", 3: "Sri Ram Navami", 14: "Maha Vishuva Sankranti/ Dr. B.R. Ambedkar Jayanti", 18: "Good Friday"},
-                4: {12: "Buddha Purnima/ Birthday of Pt. Raghunath Murmu", 27: "Sabitri Amabasya"},
-                5: {7: "Id-ul-Zuha", 14: "Pahili Raja (2nd Saturday)", 15: "Raja Sankranti", 27: "Ratha Yatra"},
-                6: {5: "Bahuda Yatra(Optional Holiday)", 6: "Muharram"},
-                7: {9: "Jhulana Purnima (2nd Saturday)", 15: "Independence Day/ Janmastami", 27: "Ganesh Puja", 28: "Nuakhai"},
-                8: {5: "Birthday of Prophet Muhammad", 21: "Mahalaya", 29: "Mahasaptami", 30: "Mahastami"},
-                9: {1: "Mahanavami", 2: "Vijaya Dasami/ Gandhi Jayanti", 7: "Kumar Purnima", 21: "Diwali"},
-                10: {5: "Rahas Purnima", 12: "Prathamastami(Optional Holiday)"},
-                11: {25: "X-Mas Day"}
-            }  
+            }
         }
     };
 
@@ -265,7 +184,7 @@ document.addEventListener("DOMContentLoaded", function() {
             selectMonth.appendChild(option);
         });
 
-        for (let year = 2024; year <= 2025; year++) {
+        for (let year = 2024; year <= 2026; year++) {
             const option = document.createElement('option');
             option.value = year;
             option.textContent = year;
@@ -320,7 +239,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 dateElement.classList.add('today');
             }
 
-                    // Apply lightblue background for Durgapuja, dates from 8th to 17th November on the 'school' tab
+                // Apply lightblue background for Durgapuja, dates from 8th to 17th November on the 'school' tab
             if (currentTab === 'school' && month === 8 && day >= 29 ||  month === 9 && day <= 7) {
                 dateElement.classList.add('highlight-red'); // Add this custom class
             }
@@ -332,6 +251,7 @@ document.addEventListener("DOMContentLoaded", function() {
             if (currentTab === 'school' && month === 4 && day >= 6 ||  month === 5 && day <= 19 && day <= 31) {
                 dateElement.classList.add('highlight-red'); // Add this custom class
             }
+
             if (holidayData[currentTab][year] && holidayData[currentTab][year][month]?.[day]) {
                 dateElement.classList.add('active');
                 dateElement.title = holidayData[currentTab][year][month][day];
