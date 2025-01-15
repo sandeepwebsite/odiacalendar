@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const today = new Date();
     const holidayData = {
         bank: {
-            2024: {
+            2025: {
                 0: { 15: "Makar Sankranti" },
                 1: { 14: "Basanta Panchami" },
                 2: { 8: "Maha Shivaratri", 26: "Holi", 29: "Good Friday" },
@@ -107,70 +107,71 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         },
         state: {
-            2024: {
-                0: { 15: "Makar Sankranti", 23: "Subash Chandra Bose Jayanti / Vir Surendra Sai Jayanti", 26: "Republic Day" },
+            2025: {
+                0: {
+                    14: "Makar Sankranti",
+                    23: "Subash Chandra Bose Jayanti / Vir Surendra Sai Jayanti",
+                    26: "Republic Day"
+                },
   
                 1: {
-                    14: "Basanta Panchami"
+                    14: "Basanta Panchami",
+                    26: "Maha Shivaratri"
                 },
   
                 2: {
                     5: "Panchayati Raj Divas",
-                    8: "Maha Shivaratri",
-                    25: "Dola Purnima",
-                    26: "Holi",
-                    29: "Good Friday",
+                    14: "Dola Purnima",
+                    15: "Holi",
+                    31: "Id-Ul-Fitre",
                 },
   
                 3: {
                     1: "Utkal Divas",
-                    11: "Id-ul-Fitre",
-                    17: "Ram Navami"
+                    14: "Maha Vishuva Sankranti/ Dr. B.R. Ambedkar Jayanti",
+                    18: "Good Friday"
                   },
   
                 4: {
-                    23: "Budha Purnima / Birthday of Pandit Raghunath Murmu"
+                    12: "Budha Purnima / Birthday of Pandit Raghunath Murmu",
+                    27: "Sabitri Amabasya"
                   },
   
                 5: {
-                    6: "Sabitri Amabasya",
-                    14: "Pahili Raja",
-                    15: "Raja Sankranti",
-                    17: "ID-ul-Zuha"
+                    7: "Id-ul-Zuha",
+                    27: "Ratha Yatra"
                   },
   
-                6: {
-                    17: "Muharram",
-                    15: "Bahuda Yatra (Optional Holiday)"
-                  },
+                // 6: {
+                //     17: "Muharram",
+                //     15: "Bahuda Yatra (Optional Holiday)"
+                //   },
   
                 7: {
-                    15: "Independence Day",
-                    19: "Jhulana Purnima",
-                    26: "Janmastami"
+                    15: "Independence Day / Janmastami",
+                    27: "Ganesh Puja",
+                    28: "Nuakhai"
                   },
   
                 8: {
-                    7: "Ganesh Puja",
-                    16: "Birthday of Prophet Muhammad"
+                    5: "Birthday of Prophet Muhammad",
+                    29: "Mahasaptami",
+                    30: "Mahastami"
                   },
   
                 9: {
-                    2: "Gandhi Jayanti / Mohalaya",
-                    10: "Mahasaptami",
-                    11: "Mahastami",
-                    16: "Kumar Purnima",
-                    31: "Diwali / Kalipuja"
+                    1: "Mahanavami",
+                    2: "Gandhi Jayanti / Vijaya Dasami",
+                    7: "Kumar Purnima",
+                    21: "Diwali / Kalipuja"
                   },
   
                 10: {
-                    15: "Rahas Purnima",
-                    23: "Prathamastami (4th Saturday)"
+                    5: "Rahas Purnima"
                   },
                   
                 11: {
-                    25: "X-Mas Day",
-                    24: "Christmas Eve (Optional Holiday)"
+                    25: "X-Mas Day"
                   }
             }
         }
@@ -184,7 +185,7 @@ document.addEventListener("DOMContentLoaded", function() {
             selectMonth.appendChild(option);
         });
 
-        for (let year = 2024; year <= 2026; year++) {
+        for (let year = 2025; year <= 2025; year++) {
             const option = document.createElement('option');
             option.value = year;
             option.textContent = year;
