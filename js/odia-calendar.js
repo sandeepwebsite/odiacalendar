@@ -1,7 +1,7 @@
 const odiaDigits = ['୦', '୧', '୨', '୩', '୪', '୫', '୬', '୭', '୮', '୯'];
 // Saka Calendar Conversion Logic
 function gregorianToSaka(date) {
-    const sakaEpochStart = new Date('March 20, 2024');  // Chaitra 1 (22 march) of the Saka year (approx.)
+    const sakaEpochStart = new Date('March 19, 2024');  // Chaitra 1 (22 march) of the Saka year (approx.)
     const diffTime = date - sakaEpochStart;  // Difference between the given date and the Saka Epoch
     const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));  // Convert diffTime to days
 
