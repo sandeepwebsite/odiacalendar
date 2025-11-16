@@ -81,7 +81,7 @@ function calculateTithi(date) {
 ----------------------------*/
 function gregorianToSaka(date) {
     // Your original approach (approx). Keeping base close to your comment.
-    const sakaEpochStart = new Date('March 19, 2025');  // Chaitra 1 (approx.)
+    const sakaEpochStart = new Date('March 20, 2025');  // Chaitra 1 (approx.)
     const diffTime = date - sakaEpochStart;
     const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
 
@@ -108,59 +108,85 @@ function getSakaMonthName(monthIndex) {
    Event data (your original, plus fixes)
 ----------------------------*/
 const monthEvents = {
-    2024: {
-        0: { 15: { en: "Makar Sankranti/Pongal", or: "ମକର ସଂକ୍ରାନ୍ତି/ପୋଙ୍ଗାଲ୍" }, 26: { en: "Republic Day", or: "ଗଣତନ୍ତ୍ର ଦିବସ" }},
-        2: { 8: { en: "Maha Shivaratri", or: "ମହା ଶିବରାତ୍ରି" }, 20: { en: "Holi Festival", or: "ହୋଲି ପର୍ବ" }},
-        3: { 22: { en: "Earth Day", or: "ପୃଥିବୀ ଦିବସ" }},
-        4: { 1: { en: "Labor Day", or: "ଶ୍ରମିକ ଦିବସ" }},
-        5: { 5: { en: "World Environment Day", or: "ବିଶ୍ବ ପରିବେଶ ଦିବସ" }},
-        6: { 4: { en: "Independence Day", or: "ସ୍ଵାଧୀନତା ଦିବସ" }},
-        7: { 1: { en: "Friendship Day", or: "ମିତ୍ରତା ଦିବସ" }},
-        8: { 5: { en: "Teacher's Day", or: "ଶିକ୍ଷକ ଦିବସ" }},
-        9: { 31: { en: "Diwali", or: "ଦୀପାବଳି" }},
-        10: {
-            1:  { en: "Kartika Amabasya 2024", or: "କାର୍ତ୍ତିକ  ଅମାବାସ୍ୟା" },
-            2:  { en: "Gobardhan Puja", or: "ଗୋବର୍ଦ୍ଧନ ପୂଜା"},
-            3:  { en: "Bhatru Ditiya", or: "ଭାତୃ ଦ୍ଵିତୀୟା ଓ ଚନ୍ଦ୍ରଦର୍ଶନ" },
-            5:  { en: "Naga Chaturthi Brata 2024", or: "ନାଗ ଚତୁର୍ଥୀ ବ୍ରତ" },
-            8:  { en: "Solasasana Ambruta Mahoni Bhoga", or: "ଷୋଳଶାସନ ଅମୃତ ମଣୋହି ଭୋଗ" },
-            9:  { en: "Gosthastami 2024", or: "ଗୋଷ୍ଠାଷ୍ଟମୀ" },
-            10: { en: "Anla Nabami and Jagatdhatri Puja", or: "ଅଁଳା ନବମୀ, ଶ୍ରୀ ରାଧାଙ୍କ ପାଦ ଦର୍ଶନ ଓ ଜଗଦ୍ଧାତ୍ରୀ ପୂଜା" },
-            12: { en: "Debo Uthana Akadasi, Bhisma Panchaka Brata", or: "ଦେବେ।ତ୍ଅ।ପନ (ବଡ଼) ଏକାଦଶୀ, ଭୀଷ୍ମ ପଞ୍ଚକ ବ୍ରତ, ଶରଣ ଶେଷ ଓ ହଳ ନିଷେଧ" },
-            13: { en: "Garuda Dwadasi 2024, Tulasi Bibah", or: "ଗରୁଡ଼ ଦ୍ଵାଦଶୀ ଓ ତୁଳସୀ ବିବାହ" },
-            14: { en: "Badaosa 2024, Bada Osa 2024, Sisu Sibasa, Neheru Jayanti", or: "ବଡ଼ଓଷା, ଶିବୋଧପନ, ବୈକୁଣ୍ଠ ଚତୁର୍ଦ୍ଦଶୀ, ଶିଶୁ ଦିବସ(ନେହେରୁଙ୍କ ଜୟନ୍ତୀ)" },
-            15: { en: "Rasa Purnima 2024, Bali Jatra 2024, Kartikeswar Puja, Kartika Brata Samapana, Kedara Brata", or: "ରାସ ପୂର୍ଣ୍ଣିମା, ବାଲିଯାତ୍ରା, କାର୍ତ୍ତିକେଶ୍ୱର ପୂଜା, କାର୍ତ୍ତିକ ବ୍ରତ ସମାପନ, ଚନ୍ଦ୍ରପୂଜା ଓ କେଦାର ବ୍ରତ" },
-            16: { en: "Bichha Sankranti, Chadakhai 2024", or: "ବିଛା ସଂକ୍ରାନ୍ତି, ଛାଡ଼ଖାଇ ଓ ହ.ନି" },
-            20: { en: "Sita Bibah", or: "ସୀତା ବିବାହ ଓ ଶ୍ରୀକ୍ଷେତ୍ର ପରିକ୍ରମା" },
-            21: { en: "Margasira Gurubar Osa 2024", or: "ମାର୍ଗଶୀର ଗୁରୁବାର ଓଷା" },
-            23: { en: "Prathamastami 2024", or: "ପ୍ରଥମାଷ୍ଟମୀ" },
-            24: { en: "Kanjianla Nabami 2024", or: "କାଞ୍ଜିଅଁଳା ନବମୀ" },
-            26: { en: "Upasana Ekadasi", or: "ଉତ୍ପନ୍ନା ଏକାଦଶୀ, ଉପବାସ ଓ ହ. ନି"},
-            28: { en: "Manabasa Osha", or: "ମାଣବସା ଗୁରୁବାର ଓଷା"},
-            29: { en: "Shivachaturdasi Upasana", or: "ଶିବଚତୁର୍ଦ୍ଦଶୀ ଉପବାସ"},
-            30: { en: "Debadipapali arambha", or: "ଦେବଦୀପାବଳୀ ଆରମ୍ଭ, ଚନ୍ଦ୍ରକ୍ଷୟ ଓ ଦଳ ନିଷେଧ"}
-        },
-        11: {
-            1:  {en: "mahodadhi amaabasya, madhya debadipaabali o surjyamahati snaana", or: "ମହୋଦଧି ଅମାବାସ୍ୟା, ମଧ୍ୟ ଦେବଦୀପାବଳୀ ଓ ସୂର୍ଯ୍ୟମହତୀ ସ୍ନାନ"},
-            2:  {en: "debadipaabali samaapti o chandradarsana", or: "ଦେବଦୀପାବଳୀ ସମାପ୍ତି ଓ ଚନ୍ଦ୍ରଦର୍ଶନ"},
-            4:  {en: "rambha trutiyaa", or: "ରମ୍ଭା ତୃତୀୟା"},
-            5:  {en: "maannabasaa gurubara osa o sarana arambha", or: "ମାଣବସା ଗୁରୁବାର ଓଷା ଓ ଶରଣ ଆରମ୍ଭ"},
-            6:  {en: "kuraalla panchami", or: "କୁରାଳ ପଞ୍ଚମୀ"},
-            7:  {en: "odhanna o prabarana sasthi", or: "ଓଢ଼ଣ ଓ ପ୍ରାବରଣ ଷଷ୍ଠୀ"},
-            9:  {en: "sarana sesa", or: "ଶରଣ ଶେଷ"},
-            11: {en: "mokshada ekaadasi o halla nisedha ", or: "ମୋକ୍ଷଦା ଏକାଦଶୀ ଓ ହଳ ନିଷେଧ"},
-            12: {en: "byanjana dwadasi", or: "ବ୍ୟଞ୍ଜନ ଦ୍ୱାଦଶୀ"},
-            13: {en: "anang trayodasi o gita jayantee", or: "ଅନଙ୍ଗ ତ୍ରୟୋଦଶୀ ଓ ଗୀତ ଜୟନ୍ତୀ"},
-            14: {en: "pandu osa, chandrapuja o sibachaturdasi upabasa", or: "ପଣ୍ଡୁ ଓଷା, ଚନ୍ଦ୍ରପୂଜା ଓ ଶିବଚତୁର୍ଦଶୀ ଉପବାସ"},
-            15: {en: "purnimaa", or: "ପୂର୍ଣ୍ଣିମା"},
-            16: {en: "dhanu sankranti, pahili bhoga o halla nisedha", or: "ଧନୁ ସଂକ୍ରାନ୍ତି, ପହିଲି ଭୋଗ ଓ ହଳ ନିଷେଧ"},
-            17: {en: "dand pahanraa o bata osa", or: "ଦଣ୍ଡ ପହଁରା ଓ ବାଟ ଓଷା"},
-            23: {en: "pathani samantanka jayantee", or: "ପଠାଣି ସାମନ୍ତଙ୍କ ଜୟନ୍ତୀ"},
-            25: {en: "jisu khristanka janma (bada dina)", or: "ଯୀଶୁ ଖ୍ରୀଷ୍ଟଙ୍କ ଜନ୍ମ (ବଡ଼ ଦିନ)"},
-            26: {en: "safala ekaadasi o halla nisedha", or: "ସଫଳ ଏକାଦଶୀ ଓ ହଳ ନିଷେଧ"},
-            29: {en: "sibachaturdasi o upabasa", or: "ଶିବଚତୁର୍ଦଶୀ ଓ ଉପବାସ"},
-            30: {en: "bakula amaabasya, srimandire o gruhinna bakula lagi, somamahati snaana o chandrakshya", or: "ବକୁଳ ଅମାବାସ୍ୟା, ଶ୍ରୀମନ୍ଦିରେ ଓ ଗୃହିଣ ବକୁଳ ଲାଗି, ସୋମମହତି ସ୍ନାନ ଓ ଚନ୍ଦ୍ରକ୍ଷୟ"}
-        }
+    2026: {
+            0: {
+                6:  { en: "Guru Govind Singh Birthday", or: "ଗୁରୁ ଗୋବିନ୍ଦ ସିଂହ ଜୟନ୍ତୀ" },
+                14: { en: "Makar Sankranti", or: "ମକର ସଂକ୍ରାନ୍ତି" },
+                23: { en: "Subash Chandra Bose Jayanti / Vir Surendra Sai Jayanti / Basanta Panchami", or: "ସୁବାସ ଚନ୍ଦ୍ର ବୋସ ଜୟନ୍ତୀ / ବୀର ସୁରେନ୍ଦ୍ର ସାଈ ଜୟନ୍ତୀ / ବସନ୍ତ ପଞ୍ଚମୀ" },
+                26: { en: "Republic Day", or: "ଗଣତନ୍ତ୍ର ଦିବସ" }
+            },
+
+            2: {
+                17: { en: "Sab-e-Qadr", or: "ଶବେ-କଦର" }
+            },
+
+            2: {   // March
+                3:  { en: "Dola Purnima", or: "ଡୋଳା ପୂର୍ଣ୍ଣିମା" },
+                4:  { en: "Holi", or: "ହୋଲି" },
+                17: { en: "Sab-e-Qadr", or: "ଶବେ-କଦର" },
+                21: { en: "Id-Ul-Fitre", or: "ଇଦ୍-ଉଲ୍-ଫିତର" },
+                27: { en: "Shree Ram Nabami", or: "ଶ୍ରୀ ରାମ ନବମୀ" }
+            },
+
+            3: {
+                1:  { en: "Utkal Divas", or: "ଉତ୍କଳ ଦିବସ" },
+                3:  { en: "Good Friday", or: "ଗୁଡ୍ ଫ୍ରାଇଡେ" },
+                4:  { en: "Easter Saturday", or: "ଇଷ୍ଟର ଶନିବାର" }
+            },
+
+            3: {
+                14: { en: "Mahabishuba Sankranti / Dr. B. R. Ambedkar Jayanti", or: "ମହାବିଷୁବ ସଂକ୍ରାନ୍ତି / ଡଃ ବି.ଆର୍. ଅମ୍ବେଦକର ଜୟନ୍ତୀ" }
+            },
+
+            4: {
+                1:  { en: "Budha Purnima / Birthday of Pandit Raghunath Murmu", or: "ବୁଦ୍ଧ ପୂର୍ଣ୍ଣିମା / ପଣ୍ଡିତ ରଘୁନାଥ ମୁର୍ମୁ ଜନ୍ମଦିନ" },
+                16: { en: "Sabitri Amabasya", or: "ସାବିତ୍ରୀ ଅମାବାସ୍ୟା" },
+                22: { en: "Birthday of Raja Ram Mohan Roy", or: "ରାଜା ରାମମହନ ରାୟ ଜନ୍ମଦିନ" },
+                27: { en: "Id-ul-Zuha", or: "ଇଦ୍-ଉଲ୍-ଜୁହା" }
+            },
+
+            5: {
+                15: { en: "Raja Sankranti", or: "ରଜ ସଂକ୍ରାନ୍ତି" },
+                26: { en: "Muharram", or: "ମୁହର୍ରମ" }
+            },
+
+            6: {
+                16: { en: "Ratha Yatra", or: "ରଥଯାତ୍ରା" },
+                24: { en: "Bahuda Yatra", or: "ବହୁଦା ଯାତ୍ରା" }
+            },
+
+            7: {
+                15: { en: "Independence Day", or: "ସ୍ଵାଧୀନତା ଦିବସ" },
+                20: { en: "Foundation Day of Brahma Samaj", or: "ବ୍ରହ୍ମ ସମାଜ ପ୍ରତିଷ୍ଠା ଦିବସ" },
+                26: { en: "Birthday of Prophet Mohammad", or: "ପୈଗମ୍ବର ମହମ୍ମଦଙ୍କ ଜନ୍ମଦିନ" },
+                27: { en: "Jhulana Purnima", or: "ଝୁଲଣ ପୂର୍ଣ୍ଣିମା" }
+            },
+
+            8: {
+                4:  { en: "Janmastami", or: "ଜନ୍ମାଷ୍ଟମୀ" },
+                14: { en: "Ganesh Puja", or: "ଗଣେଶ ପୂଜା" },
+                15: { en: "Nuakhai", or: "ନୂଆଖାଇ" },
+                16: { en: "Day following Nuakhai", or: "ନୂଆଖାଇ ପରଦିନ" }
+            },
+
+            9: {
+                2:  { en: "Gandhi Jayanti", or: "ଗାନ୍ଧୀ ଜୟନ୍ତୀ" },
+                17: { en: "Maha Saptami", or: "ମହା ସପ୍ତମୀ" },
+                19: { en: "Maha Nabami", or: "ମହା ନବମୀ" },
+                20: { en: "Vijaya Dashami", or: "ବିଜୟା ଦଶମୀ" }
+            },
+
+            10: {
+                18: { en: "Anla Nabami", or: "ଅଁଳା ନବମୀ" },
+                24: { en: "Rasa Purnima", or: "ରାସ ପୂର୍ଣ୍ଣିମା" }
+            },
+
+            11: {
+                1:  { en: "Prathamastami", or: "ପ୍ରଥମାଷ୍ଟମୀ" },
+                24: { en: "Christmas Eve", or: "ବଡଦିନ ପୂର୍ବସନ୍ଧ୍ୟା" },
+                25: { en: "Christmas Day", or: "ବଡଦିନ" }
+            }
+
     },
     2025: {
         0: {
@@ -189,12 +215,7 @@ const monthEvents = {
         8: { 5: { en: "Teacher's Day", or: "ଶିକ୍ଷକ ଦିବସ" }},
         9: { 31: { en: "Halloween", or: "ହେଲୋୱିନ୍" }},
         // FIX: day 14 had duplicate keys; now we store both as an array and handle in UI
-        10: {
-            14: [
-                { en: "Diwali", or: "ଦୀପାବଳି" },
-                { en: "Children's Day", or: "ଶିଶୁ ଦିବସ" }
-            ]
-        },
+        10: { 14: { en: "Children's Day", or: "ଶିଶୁ ଦିବସ" }},
         11: { 25: { en: "Christmas", or: "ବଡ଼ଦିନ" }, 31: { en: "New Year's Eve", or: "ନୂତନ ବର୍ଷ ପୂର୍ବସନ୍ଧ୍ୟା" }}
     }
 };
@@ -240,8 +261,8 @@ function populateMonthYear() {
         selectMonth.appendChild(option);
     });
 
-    // Keep your 2024–2025 range
-    for (let year = 2024; year <= 2025; year++) {
+    // Keep your 2025–2026 range
+    for (let year = 2025; year <= 2026; year++) {
         const option = document.createElement('option');
         option.value = year;
         option.textContent = year;
